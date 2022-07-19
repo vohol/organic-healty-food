@@ -1,32 +1,29 @@
 <script>
 import AppHeader from './components/layouts/AppHeader.vue';
+import HomePage from './components/pages/HomePage.vue';
 
 export default {
 	name: 'App',
-	components: { AppHeader },
+	components: { AppHeader, HomePage },
 };
 </script>
 
 <template>
 	<AppHeader />
-	<main></main>
+	<main>
+		<home-page></home-page>
+	</main>
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-@font-face {
-	font-family: 'streamster';
-	src: url('./assets/fonts/Streamster.ttf');
-}
-
 * {
-	font-family: $font_primary;
+	color: $color-black;
+	font-family: 'DM Sans', sans-serif;
 }
 
 .container {
-	@include max-res-width(1320px);
-	@include px(15px);
+	@include max-res-width(1260px);
+	@include px(10px);
 	margin: 0 auto;
 }
 </style>

@@ -7,7 +7,7 @@ module.exports = defineConfig({
 				additionalData: `
 				@import "./src/assets/scss/_variables.scss";
 				@import "./src/assets/scss/_mixins.scss";
-				@use "./src/assets/scss/_nullstyle.scss";
+				@import "./src/assets/scss/_nullstyle.scss";
         `,
 			},
 		},

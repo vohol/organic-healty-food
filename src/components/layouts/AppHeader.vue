@@ -1,18 +1,114 @@
 <script>
-export default {};
+import LogoItem from '../LogoItem.vue';
+import NavigationItem from '../NavigationItem.vue';
+import GreenBtn from '../GreenBtn.vue';
+
+export default {
+	components: { LogoItem, NavigationItem, GreenBtn },
+};
 </script>
 
 <template>
 	<header class="header">
-		<div class="container">
-			<h1>i am hsseader</h1>
-			<h2>i am hsseader</h2>
+		<div class="container header__container">
+			<navigation-item :elementClass="'header__nav'" />
+			<logo-item :elementClass="'header__logo'" />
+			<div class="header__icons">
+				<div class="header__icons-wrapper">
+					<svg class="svg-search-dims">
+						<use xlink:href="../../assets/files/sprite.svg#search"></use>
+					</svg>
+				</div>
+				<div class="header__icons-wrapper">
+					<svg class="svg-busket-dims">
+						<use xlink:href="../../assets/files/sprite.svg#busket"></use>
+					</svg>
+				</div>
+				<green-btn :elementClass="'header__reg-btn'">Register Now</green-btn>
+				<!-- <div class="header__reg-btn">Register Now</div> -->
+			</div>
 		</div>
 	</header>
 </template>
 
-<style lang="scss">
-h2 {
-	font-family: $font_subheading;
+<style lang="scss" scoped>
+.svg-busket-dims,
+.svg-search-dims {
+	@include wh(21px);
+}
+
+.header {
+	&__container {
+		padding: 20px;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__icons {
+		margin-right: 40px;
+		position: absolute;
+		right: 0;
+		z-index: 5;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__icons-wrapper {
+		cursor: pointer;
+		margin-right: 20px;
+		@include flex-center;
+		@include wh(40px);
+		border-radius: 50px;
+		background-color: $color-light-green;
+		transition: all 0.3;
+
+		&:hover {
+			box-shadow: 0 0 20px 1px $color-main-green;
+		}
+	}
+
+	&__reg-btn {
+		position: fixed;
+		top: 111px;
+		right: -100%;
+
+		&.mobile {
+			right: 75px;
+			z-index: 5;
+		}
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	.header {
+		&__container {
+			padding-top: 50px;
+			padding-bottom: 43px;
+		}
+	}
+}
+
+@media screen and (min-width: $tablet) {
+	.header {
+		&__container {
+			flex-direction: row;
+			padding: 50px 20px 43px;
+		}
+
+		&__reg-btn {
+			margin-left: 12px;
+			position: unset;
+		}
+
+		&__icons {
+			position: unset;
+			right: unset;
+			z-index: unset;
+			margin-right: 0;
+		}
+	}
 }
 </style>
