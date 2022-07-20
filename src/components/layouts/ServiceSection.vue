@@ -284,6 +284,7 @@ export default {
 		border-radius: 50px;
 		background-color: $color-light-green;
 		margin-right: 14px;
+		transition: all 0.3s;
 	}
 
 	&__title {
