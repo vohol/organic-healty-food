@@ -12,7 +12,7 @@ export default {
 	</div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .grn-btn {
 	cursor: pointer;
 	padding: 8px 10px;

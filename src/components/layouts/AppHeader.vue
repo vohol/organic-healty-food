@@ -16,16 +16,15 @@ export default {
 			<div class="header__icons">
 				<div class="header__icons-wrapper">
 					<svg class="svg-search-dims">
-						<use xlink:href="../../assets/files/sprite.svg#search"></use>
+						<use xlink:href="@/assets/files/sprite.svg#search"></use>
 					</svg>
 				</div>
 				<div class="header__icons-wrapper">
 					<svg class="svg-busket-dims">
-						<use xlink:href="../../assets/files/sprite.svg#busket"></use>
+						<use xlink:href="@/assets/files/sprite.svg#busket"></use>
 					</svg>
 				</div>
 				<green-btn :elementClass="'header__reg-btn'">Register Now</green-btn>
-				<!-- <div class="header__reg-btn">Register Now</div> -->
 			</div>
 		</div>
 	</header>
