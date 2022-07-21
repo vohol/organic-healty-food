@@ -50,7 +50,7 @@ export default {
 			</div>
 			<div class="special-items__content">
 				<SectionTitle :elementClass="'special-items__title'">
-					Explore Our Special Items
+					Explore Our Shop
 				</SectionTitle>
 				<SectionDescription :elementClass="'special-items__description'">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
