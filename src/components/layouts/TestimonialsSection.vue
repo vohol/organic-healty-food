@@ -84,7 +84,7 @@ export default {
 .testimonials {
 	background: $color-light-yellow;
 	background-image: url('@/assets/img/testimonials-bg.webp');
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-position: center top;
 	background-size: 100%;
 
@@ -108,13 +108,6 @@ export default {
 
 @media screen and (min-width: $desktop) {
 	.testimonials {
-		background-position: center;
-
-		&__container {
-			padding-top: 90px;
-			padding-bottom: 140px;
-		}
-
 		&__title {
 			margin-bottom: 30px;
 		}

@@ -1,7 +1,4 @@
 <script>
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
 export default {
 	data() {
 		return {
@@ -37,8 +34,6 @@ export default {
 			el.dataset.aosDelay = delay;
 			delay += 150;
 		});
-
-		AOS.init();
 	},
 };
 </script>

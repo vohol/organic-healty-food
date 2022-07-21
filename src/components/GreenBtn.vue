@@ -17,15 +17,18 @@ export default {
 	cursor: pointer;
 	padding: 8px 10px;
 	border-radius: 8px;
-	background-color: #09a66d;
-	font-weight: 400;
+	background-color: $color-main-green;
+	font-weight: 500;
 	font-size: 14px;
 	line-height: 20px;
 	color: #ffffff;
 	transition: all 0.2s;
+	border: 1px solid $color-main-green;
+	text-transform: capitalize;
 
 	&:hover {
-		opacity: 0.8;
+		background-color: white;
+		color: $color-main-green;
 	}
 }
 

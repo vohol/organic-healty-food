@@ -43,8 +43,8 @@ export default {
 		const options = {
 			type: 'loop',
 			perPage: 3,
-			// autoplay: true,
-			interval: 1000,
+			autoplay: true,
+			interval: 4000,
 			direction: 'ttb',
 			height: '520px',
 			width: '500px',
@@ -68,7 +68,7 @@ export default {
 		<div class="container service__container">
 			<div class="service__content">
 				<SectionTitle :elementClass="'service__title'"
-					>Why We Are The Best?</SectionTitle
+					>What is Oars Store?</SectionTitle
 				>
 				<SectionDescription :elementClass="'service__description'">
 					Lorem Ipsum is simply dummy text of the printing and typesetting

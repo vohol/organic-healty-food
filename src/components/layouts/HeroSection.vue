@@ -70,7 +70,7 @@ export default {
 			</div>
 			<div class="hero__title-wrapper">
 				<SectionTitle :elementClass="'hero__title'"
-					>Organic Fruit & Vegetables</SectionTitle
+					>Organic & Healty Food</SectionTitle
 				>
 				<SectionDescription :elementClass="'hero__description'">
 					Lorem Ipsum is simply dummy text of the printing and typesetting

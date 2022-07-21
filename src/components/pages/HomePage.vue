@@ -1,9 +1,14 @@
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import HeroSection from '../layouts/HeroSection.vue';
 import ServiceSection from '../layouts/ServiceSection.vue';
 import SpecialItems from '../layouts/SpecialItems.vue';
 import ProcessSection from '../layouts/ProcessSection.vue';
 import TestimonialsSection from '../layouts/TestimonialsSection.vue';
+import WeAre from '../layouts/WeAre.vue';
+import NewsletterSection from '../layouts/NewsletterSection.vue';
 
 export default {
 	components: {
@@ -12,6 +17,11 @@ export default {
 		SpecialItems,
 		ProcessSection,
 		TestimonialsSection,
+		WeAre,
+		NewsletterSection,
+	},
+	mounted() {
+		AOS.init();
 	},
 };
 </script>
@@ -22,6 +32,8 @@ export default {
 	<ProcessSection />
 	<SpecialItems />
 	<TestimonialsSection />
+	<WeAre />
+	<NewsletterSection />
 </template>
 
 <style lang="scss"></style>

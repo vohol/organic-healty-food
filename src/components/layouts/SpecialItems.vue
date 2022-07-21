@@ -90,7 +90,7 @@ export default {
 	&__photo-wrapper {
 		@include max-res-width(600px);
 		max-height: 600px;
-		background-color: #dcf3ea;
+		background-color: $color-light-yellow;
 		position: relative;
 		overflow: hidden;
 		margin-bottom: 50px;
@@ -109,7 +109,7 @@ export default {
 	&__rotated-photo {
 		position: absolute;
 		width: 100%;
-		box-shadow: 15px 15px 40px rgba(144, 208, 88, 0.4);
+		box-shadow: 15px 15px 40px rgba($color-pale-yellow, 0.4);
 		transform: rotate(30deg);
 	}
 
