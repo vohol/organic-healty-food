@@ -1,10 +1,11 @@
 <script>
 import AppHeader from './components/layouts/AppHeader.vue';
 import HomePage from './components/pages/HomePage.vue';
+import AppFooter from './components/layouts/AppFooter.vue';
 
 export default {
 	name: 'App',
-	components: { AppHeader, HomePage },
+	components: { AppHeader, HomePage, AppFooter },
 };
 </script>
 
@@ -13,6 +14,7 @@ export default {
 	<main>
 		<HomePage></HomePage>
 	</main>
+	<AppFooter />
 </template>
 
 <style lang="scss">
