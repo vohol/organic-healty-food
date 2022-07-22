@@ -1,7 +1,12 @@
 <script>
-export default {};
+import InnerHero from '../layouts/InnerHero.vue';
+import NewsletterSection from '../layouts/NewsletterSection.vue';
+export default { components: { InnerHero, NewsletterSection } };
 </script>
 
-<template><h1>shop</h1></template>
+<template>
+	<InnerHero :title="'store'"> Shop List </InnerHero>
+	<NewsletterSection />
+</template>
 
 <style lang="scss"></style>

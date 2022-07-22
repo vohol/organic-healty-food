@@ -1,0 +1,98 @@
+<script>
+import SectionTitle from '../SectionTitle.vue';
+export default {
+	components: { SectionTitle },
+	props: {
+		title: String,
+	},
+};
+</script>
+
+<template>
+	<section class="inner-hero">
+		<div class="container inner-hero__container">
+			<SectionTitle :elementClass="'inner-hero__title'">
+				<slot />
+			</SectionTitle>
+			<nav class="inner-nav">
+				<router-link to="/" class="inner-nav__item">Home</router-link>
+				<span class="inner-nav__item">{{ title }}</span>
+			</nav>
+		</div>
+	</section>
+</template>
+
+<style lang="scss">
+.inner-hero {
+	background: $color-light-yellow;
+	background-image: url('@/assets/img/testimonials-bg.webp');
+	background-position: center;
+	background-size: 100%;
+
+	&__container {
+		@include py(25px);
+	}
+
+	&__title {
+		text-align: center;
+		margin-bottom: 5px;
+	}
+}
+
+@media screen and (min-width: $tablet) {
+	.inner-hero {
+		&__container {
+			@include py(60px);
+		}
+
+		&__title {
+			text-align: center;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.inner-nav {
+	display: flex;
+	justify-content: center;
+
+	&__item {
+		font-size: 18px;
+		font-weight: 500;
+		font-style: italic;
+		text-transform: capitalize;
+
+		&:not(:last-child) {
+			margin-right: 3px;
+
+			&::after {
+				margin-left: 3px;
+				content: '/';
+				font-size: 18px;
+				font-weight: 500;
+				font-style: italic;
+			}
+			&:hover {
+				color: $color-main-green;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $tablet) {
+	.inner-nav {
+		&__item {
+			font-size: 24px;
+
+			&:not(:last-child) {
+				margin-right: 5px;
+
+				&::after {
+					margin-left: 5px;
+					font-size: 24px;
+				}
+			}
+		}
+	}
+}
+</style>
