@@ -5,6 +5,7 @@ import Home from '@/components/pages/HomePage.vue';
 import Store from '@/components/pages/ShopPage.vue';
 import AboutUs from '@/components/pages/AboutUs.vue';
 import Contact from '@/components/pages/ContactPage.vue';
+import Product from '@/components/pages/ProductPage.vue';
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -28,6 +29,12 @@ const router = createRouter({
 			path: '/contact',
 			name: 'contact',
 			component: Contact,
+		},
+		{
+			path: '/store/:productName',
+			name: 'product',
+			component: Product,
+			props: true,
 		},
 	],
 });
