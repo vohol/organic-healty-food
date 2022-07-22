@@ -72,7 +72,7 @@ export default {
 				class="we-are__img"
 				data-aos="fade-up"
 				data-aos-delay="50"
-				data-aos-offset="700"
+				data-aos-offset="400"
 				data-aos-once="true"
 			>
 				<img src="@/assets/img/man-with-milk.webp" alt="man with milk" />

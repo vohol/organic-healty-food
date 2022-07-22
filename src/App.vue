@@ -1,18 +1,17 @@
 <script>
 import AppHeader from './components/layouts/AppHeader.vue';
-import HomePage from './components/pages/HomePage.vue';
 import AppFooter from './components/layouts/AppFooter.vue';
 
 export default {
 	name: 'App',
-	components: { AppHeader, HomePage, AppFooter },
+	components: { AppHeader, AppFooter },
 };
 </script>
 
 <template>
 	<AppHeader />
 	<main>
-		<HomePage></HomePage>
+		<router-view />
 	</main>
 	<AppFooter />
 </template>

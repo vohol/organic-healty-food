@@ -7,14 +7,14 @@ export default {
 </script>
 
 <template>
-	<a href="#" class="logo" :class="elementClass">
+	<router-link to="/" class="logo" :class="elementClass">
 		<svg class="svg-earth-dims logo__earth">
 			<use xlink:href="../assets/files/sprite.svg#earth"></use>
 		</svg>
 		<svg class="svg-leaf-dims logo__leaf">
 			<use xlink:href="../assets/files/sprite.svg#leaf"></use>
 		</svg>
-	</a>
+	</router-link>
 </template>
 
 <style lang="scss" scoped>

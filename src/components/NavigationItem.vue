@@ -4,22 +4,22 @@ export default {
 		return {
 			menu: [
 				{
-					link: '#',
+					link: '/',
 					id: 1,
+					name: 'home',
+				},
+				{
+					link: '/store',
+					id: 2,
+					name: 'store',
+				},
+				{
+					link: '/about-us',
+					id: 3,
 					name: 'about us',
 				},
 				{
-					link: '#',
-					id: 2,
-					name: 'service',
-				},
-				{
-					link: '#',
-					id: 3,
-					name: 'menu',
-				},
-				{
-					link: '#',
+					link: '/contact',
 					id: 3,
 					name: 'contact',
 				},
@@ -44,7 +44,9 @@ export default {
 	<nav class="nav" :class="elementClass">
 		<ul :class="{ 'nav__list--mobile': mobile }" class="nav__list">
 			<li v-for="item in menu" :key="item.id" class="nav__item">
-				<a class="nav__link" :href="item.link">{{ item.name }}</a>
+				<router-link class="nav__link" :to="item.link">{{
+					item.name
+				}}</router-link>
 			</li>
 		</ul>
 		<div class="site-overlay"></div>

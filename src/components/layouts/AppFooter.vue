@@ -236,13 +236,13 @@ export default {
 }
 
 .logo-container {
-	border: 5px solid $color-light-yellow;
+	border: 5px solid $color-light-green;
 	padding: 30px 30px 40px;
 	position: relative;
 	margin-bottom: 80px !important;
 
 	&::after {
-		background-image: url('@/assets/img/logo-bg.png');
+		background-image: url('@/assets/img/footer-bg2.png');
 		content: '';
 		position: absolute;
 		bottom: 0;
@@ -250,8 +250,8 @@ export default {
 		right: 0;
 		transform: translateY(50%);
 		height: 105px;
-		background-size: 100%;
-		background-position: center;
+		background-size: 75%;
+		background-position: center right;
 		background-repeat: no-repeat;
 		z-index: 1;
 	}
