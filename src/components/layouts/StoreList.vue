@@ -1,32 +1,10 @@
 <script>
+import { mapGetters } from 'vuex';
 import StoreListItem from './StoreListItem.vue';
+
 export default {
-	data() {
-		return {
-			products: [],
-			isLoading: false,
-		};
-	},
-	methods: {
-		getProducts() {
-			this.isLoading = true;
-			fetch('https://sheetdb.io/api/v1/piolx43w5m6nb')
-				.then((r) => {
-					if (r.ok) return r.json();
-				})
-				.then((data) => {
-					let result = [];
-					data.forEach((element) => {
-						result.push({ ...element });
-					});
-					this.products = result;
-					console.log(this.products);
-					this.isLoading = false;
-				});
-		},
-	},
-	mounted() {
-		this.getProducts();
+	computed: {
+		...mapGetters(['allProducts', 'allFilters']),
 	},
 	components: { StoreListItem },
 };
@@ -35,10 +13,18 @@ export default {
 <template>
 	<section class="store">
 		<div class="container store__container">
-			<div v-if="isLoading">Loading...</div>
-			<ul v-else class="store__list">
+			<ul class="filters store__filters">
+				<li
+					v-for="filter in allFilters"
+					:key="allFilters.indexOf(filter)"
+					class="filter__item"
+				>
+					{{ filter }}
+				</li>
+			</ul>
+			<ul class="store__list">
 				<StoreListItem
-					v-for="product in products"
+					v-for="product in allProducts"
 					:key="product.id"
 					:product="product"
 				></StoreListItem>

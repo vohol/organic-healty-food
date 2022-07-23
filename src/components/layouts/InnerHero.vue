@@ -64,6 +64,7 @@ export default {
 
 		&:not(:last-child) {
 			margin-right: 3px;
+			transition: color 0.3s;
 
 			&::after {
 				margin-left: 3px;
@@ -72,6 +73,7 @@ export default {
 				font-weight: 500;
 				font-style: italic;
 			}
+
 			&:hover {
 				color: $color-main-green;
 			}

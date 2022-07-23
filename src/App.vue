@@ -1,10 +1,16 @@
 <script>
+import { mapActions } from 'vuex';
 import AppHeader from './components/layouts/AppHeader.vue';
 import AppFooter from './components/layouts/AppFooter.vue';
 
 export default {
 	name: 'App',
 	components: { AppHeader, AppFooter },
+	methods: mapActions(['fetchProducts']),
+
+	async mounted() {
+		this.fetchProducts();
+	},
 };
 </script>
 
