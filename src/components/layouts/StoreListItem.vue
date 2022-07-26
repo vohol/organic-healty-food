@@ -24,6 +24,7 @@ export default {
 				name: 'product',
 				params: {
 					productName: product.name.replace(/(\W|_)+/g, '-').toLowerCase(),
+					id: product.id,
 				},
 			}"
 			v-if="product.images.split(',').length === 1"
@@ -40,6 +41,7 @@ export default {
 				name: 'product',
 				params: {
 					productName: product.name.replace(/(\W|_)+/g, '-').toLowerCase(),
+					id: product.id,
 				},
 			}"
 			v-else
@@ -63,6 +65,7 @@ export default {
 					name: 'product',
 					params: {
 						productName: product.name.replace(/(\W|_)+/g, '-').toLowerCase(),
+						id: product.id,
 					},
 				}"
 				class="product__name"

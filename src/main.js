@@ -32,7 +32,7 @@ const router = createRouter({
 			component: Contact,
 		},
 		{
-			path: '/store/:productName',
+			path: '/store/:productName' + '-' + ':id',
 			name: 'product',
 			component: Product,
 			props: true,
