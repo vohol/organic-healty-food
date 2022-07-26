@@ -7,8 +7,8 @@ export default { components: { InnerHero, NewsletterSection, StoreList } };
 
 <template>
 	<InnerHero :title="'store'"> Shop List </InnerHero>
-	<NewsletterSection />
 	<StoreList />
+	<NewsletterSection />
 </template>
 
 <style lang="scss"></style>

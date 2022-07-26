@@ -19,6 +19,9 @@ export default {
 		allProducts(state) {
 			return state.products;
 		},
+		featureProducts(_, getters) {
+			return getters.allProducts.filter((el) => el.promo || el.hot);
+		},
 		allFilters(_, getters) {
 			let result = ['all'];
 

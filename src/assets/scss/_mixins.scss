@@ -35,3 +35,22 @@
 	max-width: $var;
 	width: 100%;
 }
+
+@mixin button-style {
+	border: 1px solid rgba($color-main-green, 0.12);
+	background-color: rgba($color-main-green, 0.06);
+	transition: all 0.3s;
+
+	&:hover {
+		background-color: rgba($color-main-green, 0.12);
+	}
+
+	&--active {
+		background-color: $color-main-green;
+		color: white;
+
+		&:hover {
+			background-color: $color-main-green;
+		}
+	}
+}

@@ -9,6 +9,7 @@ import ProcessSection from '../layouts/ProcessSection.vue';
 import TestimonialsSection from '../layouts/TestimonialsSection.vue';
 import WeAre from '../layouts/WeAre.vue';
 import NewsletterSection from '../layouts/NewsletterSection.vue';
+import FeatureProducts from '../layouts/FeatureProducts.vue';
 
 export default {
 	components: {
@@ -19,6 +20,7 @@ export default {
 		TestimonialsSection,
 		WeAre,
 		NewsletterSection,
+		FeatureProducts,
 	},
 	mounted() {
 		AOS.init();
@@ -31,6 +33,7 @@ export default {
 	<ServiceSection />
 	<ProcessSection />
 	<SpecialItems />
+	<FeatureProducts />
 	<TestimonialsSection />
 	<WeAre />
 	<NewsletterSection />
