@@ -29,7 +29,7 @@ export default {
 		},
 
 		totalPages() {
-			return +Math.ceil(this.filteredItems.length / this.perPage);
+			return Math.ceil(this.filteredItems.length / this.perPage);
 		},
 
 		cuttedProducts() {
@@ -47,8 +47,6 @@ export default {
 			let target = event.target.textContent.trim().toLowerCase();
 			let targetObject = event.target;
 			const filters = document.querySelectorAll('.' + nonActiveClass);
-			console.log(this.activeFilter);
-			console.log(target);
 
 			filters.forEach((el) => el.classList.remove(activeClass));
 			targetObject.classList.add(activeClass);
@@ -83,7 +81,6 @@ export default {
 			<div class="pagination" v-if="totalPages > 1">
 				<button
 					class="material-symbols-outlined pagination__item"
-					v-if="currentPage > 1"
 					@click="currentPage > 1 ? currentPage-- : (currentPage = 1)"
 				>
 					chevron_left
@@ -101,7 +98,6 @@ export default {
 				</div>
 				<button
 					class="material-symbols-outlined pagination__item"
-					v-if="currentPage < totalPages"
 					@click="
 						currentPage < totalPages
 							? currentPage++

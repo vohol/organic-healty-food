@@ -10,10 +10,12 @@ export default {
 	mutations: {
 		updateProducts(state, products) {
 			state.products = products;
+			state.isLoaded = true;
 		},
 	},
 	state: {
 		products: [],
+		isLoaded: false,
 	},
 	getters: {
 		allProducts(state) {
@@ -32,6 +34,9 @@ export default {
 				});
 
 			return result;
+		},
+		isLoaded(state) {
+			return state.isLoaded;
 		},
 	},
 };

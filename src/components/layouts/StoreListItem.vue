@@ -85,7 +85,7 @@ export default {
 	</li>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .product {
 	width: 300px;
 	min-height: 380px;
