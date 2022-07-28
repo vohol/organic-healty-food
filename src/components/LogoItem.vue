@@ -97,10 +97,6 @@ export default {
 		transform-origin: 23.5px 32px;
 	}
 
-	// &:hover &__leaf {
-	// 	transform: rotate(-0.25turn) !important;
-	// }
-
 	&.active &__leaf {
 		transform: rotate(-1turn) !important;
 	}

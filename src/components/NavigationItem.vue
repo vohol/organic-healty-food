@@ -33,11 +33,13 @@ export default {
 			this.mobile = !this.mobile;
 			document.querySelector('.header__reg-btn').classList.toggle('mobile');
 			document.querySelector('.header__logo').classList.toggle('active');
+			document.body.classList.toggle('nonscroll');
 		},
 		closeMobileMenu() {
 			this.mobile = false;
 			document.querySelector('.header__reg-btn')?.classList.remove('mobile');
 			document.querySelector('.header__logo')?.classList.remove('active');
+			document.body.classList.remove('nonscroll');
 		},
 	},
 };

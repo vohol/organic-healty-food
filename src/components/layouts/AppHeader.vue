@@ -10,6 +10,7 @@ export default {
 	methods: {
 		openBasket() {
 			document.querySelector('.basket').classList.add('basket--active');
+			document.body.classList.add('nonscroll');
 		},
 	},
 	computed: {

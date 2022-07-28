@@ -28,6 +28,10 @@ export default {
 	padding-top: 96px;
 }
 
+body.nonscroll {
+	overflow: hidden;
+}
+
 * {
 	color: $color-black;
 	font-family: 'DM Sans', sans-serif;

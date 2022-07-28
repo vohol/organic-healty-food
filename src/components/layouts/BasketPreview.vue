@@ -8,6 +8,7 @@ export default {
 	methods: {
 		closeBasket() {
 			document.querySelector('.basket').classList.remove('basket--active');
+			document.body.classList.remove('nonscroll');
 		},
 	},
 };
