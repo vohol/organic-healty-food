@@ -61,13 +61,16 @@ export default {
 			this.activeFilter = target;
 			this.currentPage = 1;
 		},
+		scrollToStoreSection() {
+			document.querySelector('#store').scrollIntoView({ behavior: 'smooth' });
+		},
 	},
 	components: { StoreListItem },
 };
 </script>
 
 <template>
-	<section class="store">
+	<section class="store" id="store">
 		<div class="container store__container">
 			<ul class="filters store__filters">
 				<li
@@ -90,7 +93,10 @@ export default {
 			<div class="pagination" v-if="totalPages > 1">
 				<button
 					class="material-symbols-outlined pagination__item"
-					@click="currentPage > 1 ? currentPage-- : (currentPage = 1)"
+					@click="
+						currentPage > 1 ? currentPage-- : (currentPage = 1);
+						scrollToStoreSection();
+					"
 				>
 					chevron_left
 				</button>
@@ -99,7 +105,10 @@ export default {
 						class="pagination__item"
 						v-for="page in totalPages"
 						:key="page"
-						@click="currentPage = page"
+						@click="
+							currentPage = page;
+							scrollToStoreSection();
+						"
 						:class="{ 'pagination__item--active': page === currentPage }"
 					>
 						{{ page }}
@@ -110,7 +119,8 @@ export default {
 					@click="
 						currentPage < totalPages
 							? currentPage++
-							: (currentPage = totalPages)
+							: (currentPage = totalPages);
+						scrollToStoreSection();
 					"
 				>
 					chevron_right

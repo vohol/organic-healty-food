@@ -3,7 +3,7 @@ export default {};
 </script>
 
 <template>
-	<button class="arrow-btn">
+	<router-link class="arrow-btn" :to="'/store'">
 		<span class="arrow-btn__span">
 			<slot />
 		</span>
@@ -15,7 +15,7 @@ export default {};
 				></use>
 			</svg>
 		</div>
-	</button>
+	</router-link>
 </template>
 
 <style lang="scss">
@@ -25,8 +25,7 @@ export default {};
 }
 
 .arrow-btn {
-	display: flex;
-	align-items: center;
+	@include flex-center;
 	background: transparent;
 
 	&__arrow-wrapper {
