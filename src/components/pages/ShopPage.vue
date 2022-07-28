@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-	<InnerHero :title="'store'"> Shop List </InnerHero>
+	<InnerHero :title="'store'"> Store </InnerHero>
 	<StoreList />
 	<NewsletterSection />
 </template>

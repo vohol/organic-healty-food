@@ -171,6 +171,10 @@ export default {
 		}
 	}
 
+	.router-link-exact-active {
+		color: $color-main-green;
+	}
+
 	&__link {
 		display: block;
 		padding: 10px 40px;
@@ -179,8 +183,21 @@ export default {
 		font-size: 16px;
 		line-height: 1.5;
 		transition: color 0.3s;
-		&:hover {
-			color: $color-main-green;
+		position: relative;
+
+		&::after {
+			position: absolute;
+			content: '';
+			width: 0%;
+			height: 3px;
+			background-color: $color-main-green;
+			left: 50%;
+			bottom: -5px;
+			transition: all 0.3s ease-in-out;
+		}
+		&:hover::after {
+			width: 100%;
+			left: 0;
 		}
 	}
 }

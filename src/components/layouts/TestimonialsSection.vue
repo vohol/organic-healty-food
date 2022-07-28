@@ -56,6 +56,7 @@ export default {
 					class="testimonial"
 					v-for="testimonial in testimonials"
 					:key="testimonial.id"
+					data-aos="fade-up"
 				>
 					<div class="testimonial__photo">
 						<img
