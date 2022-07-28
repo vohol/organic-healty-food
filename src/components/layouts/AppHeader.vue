@@ -2,16 +2,22 @@
 import LogoItem from '../LogoItem.vue';
 import NavigationItem from '../NavigationItem.vue';
 import GreenBtn from '../GreenBtn.vue';
+import BasketPreview from './BasketPreview.vue';
 
 export default {
-	components: { LogoItem, NavigationItem, GreenBtn },
+	components: { LogoItem, NavigationItem, GreenBtn, BasketPreview },
+	methods: {
+		openBasket() {
+			document.querySelector('.basket').classList.add('basket--active');
+		},
+	},
 };
 </script>
 
 <template>
 	<header class="header">
 		<div class="container header__container">
-			<navigation-item class="header__nav" />
+			<NavigationItem class="header__nav" />
 			<logo-item class="header__logo" />
 			<div class="header__icons">
 				<div class="header__icons-wrapper">
@@ -19,14 +25,15 @@ export default {
 						<use xlink:href="@/assets/files/sprite.svg#search"></use>
 					</svg>
 				</div>
-				<div class="header__icons-wrapper">
+				<div class="header__icons-wrapper" @click="openBasket">
 					<svg class="svg-busket-dims">
 						<use xlink:href="@/assets/files/sprite.svg#busket"></use>
 					</svg>
 				</div>
-				<green-btn class="header__reg - btn">Register Now</green-btn>
+				<green-btn class="header__reg-btn">Register Now</green-btn>
 			</div>
 		</div>
+		<BasketPreview />
 	</header>
 </template>
 

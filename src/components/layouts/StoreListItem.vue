@@ -10,13 +10,25 @@ export default {
 </script>
 
 <template>
-	<li class="shop__item product">
-		<div class="product__labels">
-			<div v-if="product.promo" class="product__label product__label--discount">
+	<li class="shop__item product-item">
+		<div class="product-item__labels">
+			<div
+				v-if="product.promo"
+				class="product-item__label product-item__label--discount"
+			>
 				{{ discount }}%
 			</div>
-			<div v-if="product.hot" class="product__label product__label--hot">
+			<div
+				v-if="product.hot"
+				class="product-item__label product-item__label--hot"
+			>
 				hot
+			</div>
+			<div
+				v-if="product.new"
+				class="product-item__label product-item__label--new"
+			>
+				new
 			</div>
 		</div>
 		<router-link
@@ -28,10 +40,10 @@ export default {
 				},
 			}"
 			v-if="product.images.split(',').length === 1"
-			class="product__picture"
+			class="product-item__picture"
 		>
 			<img
-				class="product__frst-img"
+				class="product-item__frst-img"
 				:src="require(`@/assets/img/products/${product.id}-1.png`)"
 				:alt="product.name"
 			/>
@@ -45,21 +57,21 @@ export default {
 				},
 			}"
 			v-else
-			class="product__picture product__picture--double"
+			class="product-item__picture product-item__picture--double"
 		>
 			<img
-				class="product__frst-img"
+				class="product-item__frst-img"
 				:src="require(`@/assets/img/products/${product.id}-1.png`)"
 				:alt="product.name"
 			/>
 			<img
-				class="product__scnd-img"
+				class="product-item__scnd-img"
 				:src="require(`@/assets/img/products/${product.id}-2.png`)"
 				:alt="product.name"
 			/>
 		</router-link>
 
-		<div class="product__btm">
+		<div class="product-item__btm">
 			<router-link
 				:to="{
 					name: 'product',
@@ -68,25 +80,25 @@ export default {
 						id: product.id,
 					},
 				}"
-				class="product__name"
+				class="product-item__name"
 			>
 				{{ product.name }}
 			</router-link>
 
-			<div v-if="!product.promo" class="product__price">
+			<div v-if="!product.promo" class="product-item__price">
 				$ {{ product.price }}
 			</div>
-			<div v-else class="product__price">
+			<div v-else class="product-item__price">
 				${{ product.promo }}
-				<span class="product__price--reduced">${{ product.price }}</span>
+				<span class="product-item__price--reduced">${{ product.price }}</span>
 			</div>
-			<button class="product__btn">buy now</button>
+			<button class="product-item__btn">buy now</button>
 		</div>
 	</li>
 </template>
 
 <style lang="scss" scoped>
-.product {
+.product-item {
 	width: 300px;
 	min-height: 380px;
 	height: 100%;
@@ -129,6 +141,9 @@ export default {
 
 		&--hot {
 			background: $color-pale-yellow;
+		}
+		&--new {
+			background: $color-pale-red;
 		}
 	}
 
