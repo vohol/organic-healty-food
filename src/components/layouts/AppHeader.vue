@@ -11,8 +11,8 @@ export default {
 <template>
 	<header class="header">
 		<div class="container header__container">
-			<navigation-item :elementClass="'header__nav'" />
-			<logo-item :elementClass="'header__logo'" />
+			<navigation-item class="header__nav" />
+			<logo-item class="header__logo" />
 			<div class="header__icons">
 				<div class="header__icons-wrapper">
 					<svg class="svg-search-dims">
@@ -24,7 +24,7 @@ export default {
 						<use xlink:href="@/assets/files/sprite.svg#busket"></use>
 					</svg>
 				</div>
-				<green-btn :elementClass="'header__reg-btn'">Register Now</green-btn>
+				<green-btn class="header__reg - btn">Register Now</green-btn>
 			</div>
 		</div>
 	</header>

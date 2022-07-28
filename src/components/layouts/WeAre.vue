@@ -78,10 +78,8 @@ export default {
 				<img src="@/assets/img/man-with-milk.webp" alt="man with milk" />
 			</div>
 			<div class="we-are__content">
-				<SectionTitle :elementClass="'we-are__title'"
-					>Why we are the best?</SectionTitle
-				>
-				<SectionDescription :elementClass="'we-are__description'">
+				<SectionTitle class="we-are__title">Why we are the best?</SectionTitle>
+				<SectionDescription class="we-are__description">
 					Cras mattis consectetur purus sit amet fermentum. Praesent vel
 					scelerisque nisl consectetur et.</SectionDescription
 				>

@@ -67,10 +67,8 @@ export default {
 	<section class="service">
 		<div class="container service__container">
 			<div class="service__content">
-				<SectionTitle :elementClass="'service__title'"
-					>What is Oars Store?</SectionTitle
-				>
-				<SectionDescription :elementClass="'service__description'">
+				<SectionTitle class="service__title">What is Oars Store?</SectionTitle>
+				<SectionDescription class="service__description">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industry's standard dummy text ever
 					since the 1500s, when an unknown printer took a galley...

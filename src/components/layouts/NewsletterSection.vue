@@ -17,7 +17,7 @@ export default {
 			<img src="@/assets/img/greens1.png" alt="greens" />
 		</div>
 		<div class="container subscribe__container">
-			<SectionTitle :elementClass="'subscribe__title'">
+			<SectionTitle class="subscribe__title">
 				Subscribe Newsletter</SectionTitle
 			>
 			<form class="subscribe__form">
@@ -29,7 +29,7 @@ export default {
 					class="subscribe__email"
 					required
 				/>
-				<GreenBtn :elementClass="'subscribe__btn'">subscribe</GreenBtn>
+				<GreenBtn class="subscribe__btn">subscribe</GreenBtn>
 			</form>
 		</div>
 		<div

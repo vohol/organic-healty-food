@@ -1,13 +1,9 @@
 <script>
-export default {
-	props: {
-		elementClass: String,
-	},
-};
+export default {};
 </script>
 
 <template>
-	<button class="arrow-btn" :class="elementClass">
+	<button class="arrow-btn">
 		<span class="arrow-btn__span">
 			<slot />
 		</span>

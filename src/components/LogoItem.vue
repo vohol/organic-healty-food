@@ -1,13 +1,9 @@
 <script>
-export default {
-	props: {
-		elementClass: String,
-	},
-};
+export default {};
 </script>
 
 <template>
-	<router-link to="/" class="logo" :class="elementClass">
+	<router-link to="/" class="logo">
 		<svg class="svg-earth-dims logo__earth">
 			<use xlink:href="../assets/files/sprite.svg#earth"></use>
 		</svg>

@@ -46,6 +46,7 @@ export default {
 		},
 	},
 	mounted() {
+		window.scrollTo(0, 0);
 		if (this.isLoaded) {
 			this.getProduct(this.$route);
 		}
@@ -85,7 +86,7 @@ export default {
 	<InnerHero
 		:title="product.name"
 		:gapLinks="[{ name: 'store', link: '/store/' }]"
-		>Store</InnerHero
+		>{{ product.name }}</InnerHero
 	>
 	<section class="product">
 		<div v-if="!product">Loading...</div>

@@ -27,31 +27,39 @@ export default {
 			mobile: false,
 		};
 	},
-	props: {
-		elementClass: String,
-	},
+
 	methods: {
 		toggleMobileMenu() {
 			this.mobile = !this.mobile;
 			document.querySelector('.header__reg-btn').classList.toggle('mobile');
 			document.querySelector('.header__logo').classList.toggle('active');
 		},
+		closeMobileMenu() {
+			this.mobile = false;
+			document.querySelector('.header__reg-btn')?.classList.remove('mobile');
+			document.querySelector('.header__logo')?.classList.remove('active');
+		},
 	},
 };
 </script>
 
 <template>
-	<nav class="nav" :class="elementClass">
+	<nav class="nav">
 		<ul :class="{ 'nav__list--mobile': mobile }" class="nav__list">
-			<li v-for="item in menu" :key="item.id" class="nav__item">
+			<li
+				v-for="item in menu"
+				:key="item.id"
+				class="nav__item"
+				@click="closeMobileMenu"
+			>
 				<router-link class="nav__link" :to="item.link">{{
 					item.name
 				}}</router-link>
 			</li>
 		</ul>
-		<div class="site-overlay"></div>
+		<div class="site-overlay" @click="closeMobileMenu"></div>
 		<div
-			@click="toggleMobileMenu()"
+			@click="toggleMobileMenu"
 			class="burger nav__menu"
 			:class="{ mobile: mobile }"
 		>

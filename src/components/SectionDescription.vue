@@ -1,13 +1,9 @@
 <script>
-export default {
-	props: {
-		elementClass: String,
-	},
-};
+export default {};
 </script>
 
 <template>
-	<p class="section-description" :class="elementClass">
+	<p class="section-description">
 		<slot />
 	</p>
 </template>

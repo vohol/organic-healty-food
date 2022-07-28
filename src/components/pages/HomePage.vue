@@ -24,6 +24,7 @@ export default {
 	},
 	mounted() {
 		AOS.init();
+		window.scrollTo(0, 0);
 	},
 };
 </script>

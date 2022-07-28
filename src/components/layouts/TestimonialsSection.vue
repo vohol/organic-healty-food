@@ -43,10 +43,10 @@ export default {
 <template>
 	<section class="testimonials">
 		<div class="container testimonials__container">
-			<SectionTitle :elementClass="'testimonials__title'"
+			<SectionTitle class="testimonials__title"
 				>What Our Customer Saying?</SectionTitle
 			>
-			<SectionDescription :elementClass="'testimonials__description'"
+			<SectionDescription class="testimonials__description"
 				>Lorem Ipsum is simply dummy text of the printing and typesetting
 				industry. Lorem Ipsum has been the industry's standard dummy text ever
 				since the 1500s, when an unknown printer...

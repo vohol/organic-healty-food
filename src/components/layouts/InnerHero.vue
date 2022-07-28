@@ -12,7 +12,7 @@ export default {
 <template>
 	<section class="inner-hero">
 		<div class="container inner-hero__container">
-			<SectionTitle :elementClass="'inner-hero__title'">
+			<SectionTitle class="inner-hero__title">
 				<slot />
 			</SectionTitle>
 			<nav class="inner-nav">

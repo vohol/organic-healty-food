@@ -53,8 +53,8 @@ export default {
 	<footer class="footer">
 		<div class="container footer__container">
 			<div class="footer__column logo-container">
-				<LogoItem :elementClass="'footer__logo'" />
-				<SectionDescription :elementClass="'footer__description'">
+				<LogoItem class="footer__logo" />
+				<SectionDescription class="footer__description">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industry's standard dummy text ever
 					since the 1500s, when an unknown printer...

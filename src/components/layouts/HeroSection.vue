@@ -69,17 +69,15 @@ export default {
 				</div>
 			</div>
 			<div class="hero__title-wrapper">
-				<SectionTitle :elementClass="'hero__title'"
-					>Organic & Healty Food</SectionTitle
-				>
-				<SectionDescription :elementClass="'hero__description'">
+				<SectionTitle class="hero__title">Organic & Healty Food</SectionTitle>
+				<SectionDescription class="hero__description">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industry's standard dummy text ever
 					since the 1500s, when an unknown printer took a
 					galley...</SectionDescription
 				>
 			</div>
-			<ArrowBtn :elementClass="'hero__btn'">Order Now</ArrowBtn>
+			<ArrowBtn class="hero__btn">Order Now</ArrowBtn>
 			<div class="hero__photo-and-reviews">
 				<div class="hero__image-wrapper">
 					<img

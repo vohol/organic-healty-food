@@ -49,16 +49,16 @@ export default {
 				</div>
 			</div>
 			<div class="special-items__content">
-				<SectionTitle :elementClass="'special-items__title'">
+				<SectionTitle class="special-items__title">
 					Explore Our Shop
 				</SectionTitle>
-				<SectionDescription :elementClass="'special-items__description'">
+				<SectionDescription class="special-items__description">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industry's standard dummy text ever
 					since the 1500s, when an unknown printer...
 				</SectionDescription>
 
-				<ArrowBtn :elementClass="'special-items__btn'"> Explore Now </ArrowBtn>
+				<ArrowBtn class="special-items__btn"> Explore Now </ArrowBtn>
 			</div>
 			<div id="scene2">
 				<div data-depth="0.12" class="layer">
