@@ -1,5 +1,5 @@
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 import { ref } from 'vue';
 import { Thumbs, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -21,6 +21,10 @@ export default {
 		...mapGetters(['allProducts', 'isLoaded']),
 	},
 	methods: {
+		...mapMutations(['addProductToBasket']),
+		addToBasket() {
+			this.addProductToBasket({ ...this.product, qty: this.quantity });
+		},
 		getProduct(route) {
 			const id = route.params.id?.toString().match(/\d{6}$/);
 
@@ -191,7 +195,9 @@ export default {
 							+
 						</button>
 					</div>
-					<GreenBtn class="product__buy">Add to cart</GreenBtn>
+					<GreenBtn class="product__buy" @click="addToBasket"
+						>Add to cart</GreenBtn
+					>
 				</div>
 			</div>
 			<div class="tabs">

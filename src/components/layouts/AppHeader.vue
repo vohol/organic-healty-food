@@ -3,6 +3,7 @@ import LogoItem from '../LogoItem.vue';
 import NavigationItem from '../NavigationItem.vue';
 import GreenBtn from '../GreenBtn.vue';
 import BasketPreview from './BasketPreview.vue';
+import { mapGetters } from 'vuex';
 
 export default {
 	components: { LogoItem, NavigationItem, GreenBtn, BasketPreview },
@@ -10,6 +11,9 @@ export default {
 		openBasket() {
 			document.querySelector('.basket').classList.add('basket--active');
 		},
+	},
+	computed: {
+		...mapGetters(['getBasketQty']),
 	},
 };
 </script>
@@ -29,6 +33,7 @@ export default {
 					<svg class="svg-busket-dims">
 						<use xlink:href="@/assets/files/sprite.svg#busket"></use>
 					</svg>
+					<div class="basket-label" v-if="getBasketQty">{{ getBasketQty }}</div>
 				</div>
 				<green-btn class="header__reg-btn">Register Now</green-btn>
 			</div>
@@ -38,6 +43,22 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.basket-label {
+	border-radius: 100%;
+	@include flex-center;
+	height: 16px;
+	line-height: 16px;
+	width: 16px;
+	position: absolute;
+	top: -2px;
+	left: 24px;
+	font-size: 9px;
+	font-weight: 600;
+	margin-left: 0;
+	background-color: $color-pale-yellow;
+	color: white;
+}
+
 .svg-busket-dims,
 .svg-search-dims {
 	@include wh(21px);
@@ -63,6 +84,7 @@ export default {
 	}
 
 	&__icons-wrapper {
+		position: relative;
 		cursor: pointer;
 		margin-right: 20px;
 		@include flex-center;

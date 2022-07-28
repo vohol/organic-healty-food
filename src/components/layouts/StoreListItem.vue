@@ -1,9 +1,17 @@
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
 	props: ['product'],
 	computed: {
 		discount() {
 			return ~~((this.product.promo / this.product.price - 1) * 100);
+		},
+	},
+	methods: {
+		...mapMutations(['addProductToBasket']),
+		addToBasket() {
+			this.addProductToBasket({ ...this.product, qty: 1 });
 		},
 	},
 };
@@ -92,7 +100,7 @@ export default {
 				${{ product.promo }}
 				<span class="product-item__price--reduced">${{ product.price }}</span>
 			</div>
-			<button class="product-item__btn">buy now</button>
+			<button class="product-item__btn" @click="addToBasket">buy now</button>
 		</div>
 	</li>
 </template>

@@ -1,5 +1,10 @@
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
+	computed: {
+		...mapGetters(['getBasketProducts']),
+	},
 	methods: {
 		closeBasket() {
 			document.querySelector('.basket').classList.remove('basket--active');
@@ -10,11 +15,14 @@ export default {
 
 <template>
 	<div class="basket">
-		<div class="basket__content">
-			<h1>kek</h1>
-			<h1>kek</h1>
-			<h1>kek</h1>
-			<h1>kek</h1>
+		<div class="basket__content" v-if="getBasketProducts">
+			<div
+				class="basket__item"
+				v-for="product in getBasketProducts"
+				:key="product.id"
+			>
+				{{ product }}
+			</div>
 		</div>
 	</div>
 	<div class="basket-overlay" @click="closeBasket"></div>

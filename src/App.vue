@@ -6,10 +6,11 @@ import AppFooter from './components/layouts/AppFooter.vue';
 export default {
 	name: 'App',
 	components: { AppHeader, AppFooter },
-	methods: mapActions(['fetchProducts']),
+	methods: mapActions(['fetchProducts', 'getBasketData']),
 
 	async mounted() {
 		this.fetchProducts();
+		this.getBasketData();
 	},
 };
 </script>
