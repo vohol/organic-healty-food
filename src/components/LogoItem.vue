@@ -1,9 +1,57 @@
 <script>
-export default {};
+export default {
+	data() {
+		return {
+			rotateRation: 0,
+		};
+	},
+	created() {
+		window.addEventListener('scroll', this.handleScroll);
+	},
+	unmounted() {
+		window.removeEventListener('scroll', this.handleScroll);
+	},
+	methods: {
+		handleScroll() {
+			const multiplier = 0.1;
+			const logoAnimatedPart = document.querySelector('.logo__leaf');
+			this.rotateRation = window.pageYOffset * multiplier;
+
+			this.setRotate(logoAnimatedPart);
+		},
+		hoverScroll(event) {
+			const logo = event.target.closest('.logo');
+			if (logo) {
+				this.rotateRation += 90;
+
+				const logoAnimatedPart = logo.querySelector('.logo__leaf');
+
+				this.setRotate(logoAnimatedPart);
+			}
+		},
+		disableHoverScroll(event) {
+			const logo = event.target.closest('.logo');
+			if (logo) {
+				this.rotateRation -= 90;
+
+				const logoAnimatedPart = logo.querySelector('.logo__leaf');
+				this.setRotate(logoAnimatedPart);
+			}
+		},
+		setRotate(elemet) {
+			elemet.style.transform = 'rotate(-' + this.rotateRation + 'deg)';
+		},
+	},
+};
 </script>
 
 <template>
-	<router-link to="/" class="logo">
+	<router-link
+		to="/"
+		class="logo"
+		@mouseover="hoverScroll"
+		@mouseout="disableHoverScroll"
+	>
 		<svg class="svg-earth-dims logo__earth">
 			<use xlink:href="../assets/files/sprite.svg#earth"></use>
 		</svg>
@@ -49,12 +97,12 @@ export default {};
 		transform-origin: 23.5px 32px;
 	}
 
-	&:hover &__leaf {
-		transform: rotate(-0.25turn);
-	}
+	// &:hover &__leaf {
+	// 	transform: rotate(-0.25turn) !important;
+	// }
 
 	&.active &__leaf {
-		transform: rotate(-1turn);
+		transform: rotate(-1turn) !important;
 	}
 }
 </style>

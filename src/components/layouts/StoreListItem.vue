@@ -123,7 +123,7 @@ export default {
 
 	&__labels {
 		position: absolute;
-		z-index: 3;
+		z-index: 2;
 		top: 15px;
 		right: 10px;
 		display: flex;

@@ -17,13 +17,17 @@ export default {
 
 <template>
 	<AppHeader />
-	<main>
+	<main class="main">
 		<router-view />
 	</main>
 	<AppFooter />
 </template>
 
 <style lang="scss">
+.main {
+	padding-top: 96px;
+}
+
 * {
 	color: $color-black;
 	font-family: 'DM Sans', sans-serif;

@@ -3,7 +3,7 @@ export default {};
 </script>
 
 <template>
-	<router-link class="arrow-btn" :to="'/store'">
+	<router-link class="arrow-btn" to="store">
 		<span class="arrow-btn__span">
 			<slot />
 		</span>

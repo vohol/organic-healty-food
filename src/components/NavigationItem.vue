@@ -173,6 +173,7 @@ export default {
 
 	.router-link-exact-active {
 		color: $color-main-green;
+		text-shadow: 0 0 0.4px $color-main-green, 0 0 0.4px $color-main-green;
 	}
 
 	&__link {
@@ -182,7 +183,7 @@ export default {
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 1.5;
-		transition: color 0.3s;
+		transition: all 0.3s;
 		position: relative;
 
 		&::after {

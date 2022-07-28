@@ -3,8 +3,8 @@ export default {
 		getBasketData(ctx) {
 			let products;
 
-			localStorage.getItem('storage')
-				? (products = JSON.parse(localStorage.getItem('storage')))
+			localStorage.getItem('basket')
+				? (products = JSON.parse(localStorage.getItem('basket')))
 				: (products = []);
 
 			ctx.commit('updateBasketData', products);
@@ -21,7 +21,7 @@ export default {
 				if (el.id == newProduct.id) {
 					el.qty += newProduct.qty;
 					result = true;
-					localStorage.setItem('storage', JSON.stringify(state.products));
+					localStorage.setItem('basket', JSON.stringify(state.products));
 					return;
 				}
 			});
@@ -29,7 +29,7 @@ export default {
 			if (result) return;
 
 			state.products.push(newProduct);
-			localStorage.setItem('storage', JSON.stringify(state.products));
+			localStorage.setItem('basket', JSON.stringify(state.products));
 		},
 	},
 	state: {

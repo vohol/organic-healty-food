@@ -64,6 +64,13 @@ export default {
 }
 
 .header {
+	background: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+
 	&__container {
 		padding: 20px;
 		display: flex;
@@ -110,19 +117,12 @@ export default {
 }
 
 @media screen and (min-width: $desktop) {
-	.header {
-		&__container {
-			padding-top: 50px;
-			padding-bottom: 43px;
-		}
-	}
 }
 
 @media screen and (min-width: $tablet) {
 	.header {
 		&__container {
 			flex-direction: row;
-			padding: 50px 20px 43px;
 		}
 
 		&__reg-btn {
