@@ -46,16 +46,15 @@ export default {
 .basket-label {
 	border-radius: 100%;
 	@include flex-center;
-	height: 16px;
-	line-height: 16px;
-	width: 16px;
+	height: 18px;
+	line-height: 18px;
+	min-width: 18px;
 	position: absolute;
 	top: -2px;
 	left: 24px;
-	font-size: 9px;
+	font-size: 10px;
 	font-weight: 600;
-	margin-left: 0;
-	background-color: $color-pale-yellow;
+	background-color: $color-main-green;
 	color: white;
 }
 
