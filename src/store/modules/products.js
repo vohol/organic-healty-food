@@ -22,12 +22,23 @@ export default {
 			return state.products;
 		},
 		featureProducts(_, getters) {
-			return getters.allProducts.filter((el) => el.promo || el.hot);
+			return getters.allProducts.filter((el) => el.promo || el.hot || el.new);
 		},
 		allFilters(_, getters) {
 			let result = ['all'];
 
 			getters.allProducts
+				.map((el) => el.category)
+				.forEach((el) => {
+					if (!result.includes(el)) result.push(el);
+				});
+
+			return result;
+		},
+		featureFilters(_, getters) {
+			let result = ['all'];
+
+			getters.featureProducts
 				.map((el) => el.category)
 				.forEach((el) => {
 					if (!result.includes(el)) result.push(el);

@@ -14,9 +14,17 @@ export default {
 		isFeatureProducts: Boolean,
 	},
 	computed: {
-		...mapGetters(['allProducts', 'allFilters', 'featureProducts']),
+		...mapGetters([
+			'allProducts',
+			'allFilters',
+			'featureProducts',
+			'featureFilters',
+		]),
 		products() {
 			return this.isFeatureProducts ? this.featureProducts : this.allProducts;
+		},
+		filters() {
+			return this.isFeatureProducts ? this.featureFilters : this.allFilters;
 		},
 		filteredItems() {
 			if (this.activeFilter == 'all') {
@@ -51,6 +59,7 @@ export default {
 			filters.forEach((el) => el.classList.remove(activeClass));
 			targetObject.classList.add(activeClass);
 			this.activeFilter = target;
+			this.currentPage = 1;
 		},
 	},
 	components: { StoreListItem },
@@ -62,7 +71,7 @@ export default {
 		<div class="container store__container">
 			<ul class="filters store__filters">
 				<li
-					v-for="filter in allFilters"
+					v-for="filter in filters"
 					:key="allFilters.indexOf(filter)"
 					class="filters__item"
 					:class="filter == 'all' && 'filters__item--active'"
