@@ -185,6 +185,11 @@ export default {
 		text-transform: capitalize;
 		margin-bottom: 10px;
 		flex: 1;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $color-main-green;
+		}
 	}
 
 	&__price {

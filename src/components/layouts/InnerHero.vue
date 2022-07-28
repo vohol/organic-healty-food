@@ -4,6 +4,7 @@ export default {
 	components: { SectionTitle },
 	props: {
 		title: String,
+		gapLinks: [],
 	},
 };
 </script>
@@ -16,6 +17,14 @@ export default {
 			</SectionTitle>
 			<nav class="inner-nav">
 				<router-link to="/" class="inner-nav__item">Home</router-link>
+				<router-link
+					v-for="link in gapLinks"
+					:key="link.name"
+					:to="link.link"
+					class="inner-nav__item"
+				>
+					{{ link.name }}</router-link
+				>
 				<span class="inner-nav__item">{{ title }}</span>
 			</nav>
 		</div>
