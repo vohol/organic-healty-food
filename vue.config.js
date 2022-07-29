@@ -1,7 +1,8 @@
 const { defineConfig } = require('@vue/cli-service');
 module.exports = defineConfig({
 	transpileDependencies: true,
-	publicPath: process.env.NODE_ENV === 'production' ? '/pizza-shop/' : '/',
+	publicPath:
+		process.env.NODE_ENV === 'production' ? '/organic-healty-food/' : '/',
 	css: {
 		loaderOptions: {
 			sass: {
