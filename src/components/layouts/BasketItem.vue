@@ -35,7 +35,18 @@ export default {
 			/>
 		</div>
 		<div class="basket-item__details">
-			<span class="basket-item__name">{{ product.name }}</span>
+			<router-link
+				:to="{
+					name: 'product',
+					params: {
+						productName: product.name.replace(/(\W|_)+/g, '-').toLowerCase(),
+						id: product.id,
+					},
+				}"
+				class="basket-item__name"
+			>
+				{{ product.name }}
+			</router-link>
 			<span class="basket-item__price"
 				>Price: {{ product.promo || product.price }}$</span
 			>
@@ -95,6 +106,11 @@ export default {
 		font-size: 14px;
 		text-transform: capitalize;
 		font-weight: 500;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $color-main-green;
+		}
 	}
 
 	&__price {

@@ -4,8 +4,8 @@ import 'aos/dist/aos.css';
 
 import HeroSection from '../layouts/HeroSection.vue';
 import ServiceSection from '../layouts/ServiceSection.vue';
-import SpecialItems from '../layouts/SpecialItems.vue';
 import ProcessSection from '../layouts/ProcessSection.vue';
+import SpecialItems from '../layouts/SpecialItems.vue';
 import TestimonialsSection from '../layouts/TestimonialsSection.vue';
 import WeAre from '../layouts/WeAre.vue';
 import NewsletterSection from '../layouts/NewsletterSection.vue';
