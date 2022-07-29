@@ -1,7 +1,7 @@
 const { defineConfig } = require('@vue/cli-service');
 module.exports = defineConfig({
 	transpileDependencies: true,
-	base: '/organic-healty-food/',
+	publicPath: '/organic-healty-food/',
 	css: {
 		loaderOptions: {
 			sass: {
