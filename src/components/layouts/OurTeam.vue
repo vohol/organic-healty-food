@@ -125,6 +125,7 @@ export default {
 <style lang="scss">
 .our-team {
 	background: $color-light-green;
+
 	&__container {
 		@include py(90px);
 	}
@@ -141,6 +142,7 @@ export default {
 		margin-bottom: 50px;
 	}
 }
+
 .our-team {
 	.splide-slide {
 		display: flex;

@@ -4,6 +4,7 @@ import NewsletterSection from '../layouts/NewsletterSection.vue';
 import OurTeam from '../layouts/OurTeam.vue';
 import ServiceSection from '../layouts/ServiceSection.vue';
 import ProcessSection from '../layouts/ProcessSection.vue';
+import AboutUsSection from '../layouts/AboutUsSection.vue';
 
 export default {
 	components: {
@@ -12,6 +13,7 @@ export default {
 		OurTeam,
 		ServiceSection,
 		ProcessSection,
+		AboutUsSection,
 	},
 	mounted() {
 		window.scrollTo(0, 0);
@@ -21,6 +23,7 @@ export default {
 
 <template>
 	<InnerHero :title="'about us'"> About us </InnerHero>
+	<AboutUsSection />
 	<OurTeam />
 	<ServiceSection />
 	<ProcessSection />
