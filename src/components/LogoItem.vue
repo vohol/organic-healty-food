@@ -93,7 +93,7 @@ export default {
 		position: absolute;
 		top: 0;
 		right: 0;
-		transition: all 0.6s;
+		transition: all 0.3s;
 		transform-origin: 23.5px 32px;
 	}
 

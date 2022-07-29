@@ -69,7 +69,9 @@ export default {
 				</div>
 			</div>
 			<div class="hero__title-wrapper">
-				<SectionTitle class="hero__title">Organic & Healty Food</SectionTitle>
+				<SectionTitle class="hero__title" :main="true"
+					>Organic & Healty Food</SectionTitle
+				>
 				<SectionDescription class="hero__description">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industry's standard dummy text ever

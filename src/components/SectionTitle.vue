@@ -1,16 +1,23 @@
 <script>
-export default {};
+export default {
+	props: {
+		main: Boolean,
+	},
+};
 </script>
 
 <template>
-	<h2 class="section-title">
+	<h1 v-if="main" class="section-title section-title--main">
+		<slot />
+	</h1>
+	<h2 v-else class="section-title">
 		<slot />
 	</h2>
 </template>
 
 <style lang="scss" scoped>
 .section-title {
-	font-family: 'Rosario', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-weight: 700;
 	font-size: 34px;
 	line-height: 129%;
@@ -18,7 +25,11 @@ export default {};
 
 @media screen and (min-width: $tablet) {
 	.section-title {
-		font-size: 70px;
+		font-size: 50px;
+
+		&--main {
+			font-size: 60px;
+		}
 	}
 }
 </style>

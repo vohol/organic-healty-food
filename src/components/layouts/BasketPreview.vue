@@ -1,9 +1,11 @@
 <script>
 import { mapGetters } from 'vuex';
+import BasketItem from './BasketItem.vue';
+import GreenBtn from '../GreenBtn.vue';
 
 export default {
 	computed: {
-		...mapGetters(['getBasketProducts']),
+		...mapGetters(['getBasketProducts', 'getBasketAmount']),
 	},
 	methods: {
 		closeBasket() {
@@ -11,19 +13,38 @@ export default {
 			document.body.classList.remove('nonscroll');
 		},
 	},
+	components: { BasketItem, GreenBtn },
 };
 </script>
 
 <template>
 	<div class="basket">
-		<div class="basket__content" v-if="getBasketProducts">
-			<div
-				class="basket__item"
+		<div class="basket__header">
+			<h3 class="basket__title">My shopping cart</h3>
+			<button
+				class="material-symbols-outlined basket__close"
+				@click="closeBasket"
+			>
+				close
+			</button>
+		</div>
+		<div class="basket__content" v-if="getBasketProducts?.length">
+			<BasketItem
 				v-for="product in getBasketProducts"
 				:key="product.id"
-			>
-				{{ product }}
+				:product="product"
+			/>
+		</div>
+		<div v-else class="basket__content basket__content--empty">
+			<span class="basket__empty-msg basket__empty-msg--big"> ¯\_(ツ)_/¯ </span>
+			<span class="basket__empty-msg">Your cart is empty</span>
+		</div>
+		<div class="basket__footer">
+			<div class="basket__amount">
+				<span>Total:</span>
+				<span>${{ getBasketAmount }} USD</span>
 			</div>
+			<GreenBtn class="basket__checkout">Checkout</GreenBtn>
 		</div>
 	</div>
 	<div class="basket-overlay" @click="closeBasket"></div>
@@ -41,7 +62,7 @@ export default {
 	right: 0;
 	z-index: 4;
 	transition: all 0.2s ease-in-out;
-	background-color: rgba(144, 208, 88, 0.3);
+	background-color: rgba(0, 0, 0, 0.5);
 	opacity: 0;
 	visibility: hidden;
 }
@@ -56,6 +77,8 @@ export default {
 	transform: translateX(100%);
 	transition: transform 0.3s;
 	z-index: 5;
+	display: flex;
+	flex-direction: column;
 
 	&--active {
 		transform: translateX(0%);
@@ -63,6 +86,76 @@ export default {
 			opacity: 1;
 			visibility: visible;
 		}
+	}
+
+	&__header {
+		padding: 13px 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid rgba($color-pale-black, 0.2);
+	}
+
+	&__title {
+		line-height: 20px;
+		font-size: 22px;
+		font-weight: 500px;
+	}
+
+	&__close {
+		font-size: 35px;
+		background: transparent;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $color-main-green;
+		}
+	}
+
+	&__content {
+		padding: 30px 20px;
+		flex: 1;
+		overflow: scroll;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		&--empty {
+			gap: 20px;
+			justify-content: center;
+		}
+	}
+
+	&__footer {
+		border-top: 1px solid rgba($color-pale-black, 0.2);
+		padding: 20px 20px 30px;
+	}
+
+	&__amount {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+
+		span {
+			font-size: 16px;
+			line-height: 1em;
+			font-weight: 500;
+		}
+	}
+
+	&__empty-msg {
+		font-size: 16px;
+		text-align: center;
+		color: $color-pale-black;
+
+		&--big {
+			font-size: 30px;
+		}
+	}
+
+	&__checkout {
+		text-align: center;
+		text-transform: uppercase !important;
 	}
 }
 

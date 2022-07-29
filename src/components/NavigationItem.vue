@@ -84,7 +84,7 @@ export default {
 	right: 0;
 	z-index: 4;
 	transition: all 0.2s ease-in-out;
-	background-color: rgba(144, 208, 88, 0.3);
+	background-color: rgba(0, 0, 0, 0.5);
 	opacity: 0;
 	visibility: hidden;
 }
@@ -175,6 +175,7 @@ export default {
 
 	.router-link-exact-active {
 		color: $color-main-green;
+		// font-weight: 500;
 		text-shadow: 0 0 0.4px $color-main-green, 0 0 0.4px $color-main-green;
 	}
 

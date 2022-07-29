@@ -31,6 +31,18 @@ export default {
 			state.products.push(newProduct);
 			localStorage.setItem('basket', JSON.stringify(state.products));
 		},
+		removeProductFromBasket(state, product) {
+			state.products = state.products.filter((el) => el.id != product.id);
+			localStorage.setItem('basket', JSON.stringify(state.products));
+		},
+		changeProductQty(state, newProduct) {
+			state.products.forEach((el) => {
+				if (el.id == newProduct.id) el.qty = +newProduct.qty;
+				return;
+			});
+
+			localStorage.setItem('basket', JSON.stringify(state.products));
+		},
 	},
 	state: {
 		products: [],
@@ -41,6 +53,12 @@ export default {
 		},
 		getBasketQty(state) {
 			return state.products.reduce((total, el) => total + el.qty, 0);
+		},
+		getBasketAmount(state) {
+			return state.products.reduce(
+				(total, el) => total + el.qty * (el.promo || el.price),
+				0
+			);
 		},
 	},
 };

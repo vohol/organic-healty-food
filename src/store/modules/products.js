@@ -1,10 +1,12 @@
+import * as d from '@/assets/data.js';
+
 export default {
 	actions: {
-		async fetchProducts(ctx) {
-			const res = await fetch('https://sheetdb.io/api/v1/piolx43w5m6nb');
-			const products = await res.json();
-
-			ctx.commit('updateProducts', products);
+		// async fetchProducts(ctx) {
+		// 	const res = await fetch('https://sheetdb.io/api/v1/piolx43w5m6nb');
+		// 	const products = await res.json();
+		fetchProducts(ctx) {
+			ctx.commit('updateProducts', d.defaultData);
 		},
 	},
 	mutations: {

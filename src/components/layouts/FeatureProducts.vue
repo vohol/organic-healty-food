@@ -12,7 +12,7 @@ export default {
 <template>
 	<section class="feature-pr">
 		<div class="container feature-pr__container">
-			<SectionTitle class="feature-pr__title">Feature Products</SectionTitle>
+			<SectionTitle class="feature-pr__title">Featured Products</SectionTitle>
 			<StoreList :isFeatureProducts="true" />
 		</div>
 	</section>
