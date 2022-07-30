@@ -9,7 +9,7 @@ export default {
 <template>
 	<section class="subscribe">
 		<div
-			class="left-img img"
+			class="left-img imgg"
 			data-aos="fade-right"
 			data-aos-once="true"
 			data-aos-delay="500"
@@ -21,15 +21,18 @@ export default {
 				Subscribe Newsletter</SectionTitle
 			>
 			<form class="subscribe__form">
-				<input
-					type="email"
-					name="email"
-					id="email"
-					placeholder="Your email:"
-					class="subscribe__email"
-					required
-				/>
-				<GreenBtn class="subscribe__btn">subscribe</GreenBtn>
+				<div class="field subscribe__email">
+					<input
+						class="field__input"
+						type="email"
+						name="email"
+						id="email"
+						placeholder=""
+						required
+					/>
+					<label for="email" class="field__label">Your email:</label>
+				</div>
+				<GreenBtn class="subscribe__btn" :isSubmit="true">subscribe</GreenBtn>
 			</form>
 		</div>
 		<div
@@ -43,7 +46,7 @@ export default {
 	</section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .subscribe {
 	overflow: hidden;
 	position: relative;
@@ -73,18 +76,48 @@ export default {
 
 	&__email {
 		@include max-res-width(600px);
-		@include px(30px);
-		height: 48px;
-		font-size: 14px;
-		line-height: 1.5px;
-		border-radius: 5px;
-		border: 1px solid $color-light-green;
+
 		margin-bottom: 20px;
 	}
 
 	&__btn {
 		max-width: 150px;
 		@include flex-center;
+	}
+}
+
+.field {
+	position: relative;
+	height: 48px;
+	border-radius: 5px;
+	border: 1px solid $color-light-green;
+
+	&__input {
+		font-size: 14px;
+		line-height: 1.2;
+		@include wh(100%);
+		@include px(30px);
+		padding-top: 10px;
+	}
+
+	&__label {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 14px;
+		line-height: 1;
+		color: rgba($color-pale-black, 0.8);
+		left: 20px;
+		transition: all 0.1s;
+		cursor: text;
+	}
+
+	&__input:focus ~ &__label,
+	&__input:not(:placeholder-shown) ~ &__label {
+		font-size: 10px;
+		top: 5px;
+		letter-spacing: 0.04rem;
+		transform: none;
 	}
 }
 

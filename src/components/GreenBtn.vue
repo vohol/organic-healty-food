@@ -1,14 +1,21 @@
 <script>
-export default {};
+export default {
+	props: {
+		isSubmit: Boolean,
+	},
+};
 </script>
 
 <template>
-	<div class="grn-btn">
+	<button v-if="isSubmit" class="grn-btn" :type="submit">
 		<slot />
-	</div>
+	</button>
+	<button v-else class="grn-btn">
+		<slot />
+	</button>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .grn-btn {
 	cursor: pointer;
 	padding: 8px 10px;
