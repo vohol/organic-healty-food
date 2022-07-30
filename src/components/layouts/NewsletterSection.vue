@@ -2,6 +2,30 @@
 import SectionTitle from '../SectionTitle.vue';
 import GreenBtn from '../GreenBtn.vue';
 export default {
+	data() {
+		return {
+			email: null,
+			isPressedBtn: false,
+			successfulMsg: false,
+		};
+	},
+	computed: {
+		emailIsValid() {
+			return /(.+)@(.+){2,}\.(.+){2,}/.test(this.email);
+		},
+	},
+	methods: {
+		submitForm() {
+			if (this.emailIsValid) {
+				this.successfulMsg = true;
+				this.isPressedBtn = false;
+				this.email = null;
+			} else {
+				this.isPressedBtn = true;
+				this.successfulMsg = false;
+			}
+		},
+	},
 	components: { SectionTitle, GreenBtn },
 };
 </script>
@@ -20,17 +44,26 @@ export default {
 			<SectionTitle class="subscribe__title">
 				Subscribe Newsletter</SectionTitle
 			>
-			<form class="subscribe__form">
+			<form class="subscribe__form" @submit.prevent="submitForm">
 				<div class="field subscribe__email">
 					<input
 						class="field__input"
-						type="email"
+						type="text"
 						name="email"
 						id="email"
 						placeholder=""
-						required
+						v-model="email"
 					/>
 					<label for="email" class="field__label">Your email:</label>
+					<p
+						class="error-msg error-msg--bigger"
+						v-if="!emailIsValid && isPressedBtn"
+					>
+						Invalid email
+					</p>
+					<p class="successful-msg" v-if="successfulMsg">
+						Thank you for your subscribe ❤
+					</p>
 				</div>
 				<GreenBtn class="subscribe__btn" :isSubmit="true">subscribe</GreenBtn>
 			</form>

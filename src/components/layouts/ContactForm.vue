@@ -48,6 +48,7 @@ export default {
 				this.msg = null;
 			} else {
 				this.isPressedBtn = true;
+				this.successfulMsg = false;
 			}
 		},
 	},
@@ -77,6 +78,7 @@ export default {
 								class="field__input"
 								type="text"
 								name="name"
+								id="name"
 								placeholder=""
 								v-model="name"
 							/>
@@ -89,11 +91,12 @@ export default {
 							<input
 								class="field__input"
 								type="text"
-								name="email"
+								name="email-2"
+								id="email-2"
 								placeholder=""
 								v-model="email"
 							/>
-							<label for="email" class="field__label">Email:</label>
+							<label for="email-2" class="field__label">Email:</label>
 							<p class="error-msg" v-if="!emailIsValid && isPressedBtn">
 								Invalid email
 							</p>
@@ -103,6 +106,7 @@ export default {
 								class="field__input"
 								type="text"
 								name="phone-number"
+								id="phone-number"
 								placeholder=""
 								v-model="phone"
 							/>
@@ -119,11 +123,12 @@ export default {
 								class="field__input"
 								type="text"
 								name="msg"
+								id="msg"
 								placeholder=""
 								rows="10"
 								v-model="msg"
 							></textarea>
-							<label for="email" class="field__label">Your message:</label>
+							<label for="msg" class="field__label">Your message:</label>
 							<p class="error-msg" v-if="!msgIsValid && isPressedBtn">
 								Message shoud has more then 1 word
 							</p>
@@ -140,19 +145,26 @@ export default {
 </template>
 
 <style lang="scss">
-.successful-msg {
-	padding-top: 10px;
-	font-size: 14px;
-	color: $color-main-green;
-	font-weight: 500;
-}
-
 .error-msg {
 	position: absolute;
 	font-size: 12px;
 	bottom: -16px;
 	left: 15px;
 	color: $color-pale-red;
+
+	&--bigger {
+		position: static;
+		padding-top: 10px;
+		font-size: 14px;
+		font-weight: 500;
+	}
+}
+
+.successful-msg {
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: 500;
+	color: $color-main-green;
 }
 
 .contact-form {
