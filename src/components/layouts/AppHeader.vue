@@ -54,7 +54,7 @@ export default {
 	top: -2px;
 	left: 24px;
 	font-size: 10px;
-	font-weight: 600;
+	font-weight: 500;
 	background-color: $color-main-green;
 	color: white;
 }

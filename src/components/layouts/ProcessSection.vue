@@ -111,7 +111,7 @@ export default {
 
 	&__title {
 		font-size: 24px;
-		font-weight: 600;
+		font-weight: 500;
 		margin-bottom: 20px;
 		text-transform: capitalize;
 		color: white;

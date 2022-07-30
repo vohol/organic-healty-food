@@ -176,7 +176,7 @@ export default {
 		@include px(20px);
 		height: 30px;
 		font-size: 13px;
-		font-weight: 600;
+		font-weight: 500;
 		border-radius: 30px;
 		text-transform: uppercase;
 		cursor: pointer;

@@ -300,7 +300,7 @@ export default {
 
 		&--active {
 			color: $color-black;
-			font-weight: 600;
+			font-weight: 500;
 			border: 1px solid rgba($color-pale-black, 0.5);
 			background: white;
 			border-bottom: 0;
@@ -425,14 +425,14 @@ export default {
 
 	&__name {
 		text-transform: capitalize;
-		font-weight: 600;
+		font-weight: 500;
 		font-size: 24px;
 		line-height: 1.5;
 		margin-bottom: 20px;
 	}
 
 	&__price {
-		font-weight: 600;
+		font-weight: 500;
 		font-size: 22px;
 		line-height: 1.5;
 		letter-spacing: 0.13rem;

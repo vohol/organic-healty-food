@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 .section-title {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
 	font-size: 34px;
 	line-height: 129%;
