@@ -8,7 +8,7 @@ export default {};
 	</p>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .section-description {
 	font-weight: 400;
 	font-size: 16px;

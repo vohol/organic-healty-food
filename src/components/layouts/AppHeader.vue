@@ -43,7 +43,7 @@ export default {
 	</header>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .basket-label {
 	border-radius: 100%;
 	@include flex-center;

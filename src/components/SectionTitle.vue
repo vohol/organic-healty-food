@@ -15,7 +15,7 @@ export default {
 	</h2>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .section-title {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 700;

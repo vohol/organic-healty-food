@@ -187,21 +187,6 @@ export default {
 		line-height: 1.5;
 		transition: all 0.3s;
 		position: relative;
-
-		&::after {
-			position: absolute;
-			content: '';
-			width: 0%;
-			height: 3px;
-			background-color: $color-main-green;
-			left: 50%;
-			bottom: -5px;
-			transition: all 0.3s ease-in-out;
-		}
-		&:hover::after {
-			width: 100%;
-			left: 0;
-		}
 	}
 }
 
@@ -225,6 +210,21 @@ export default {
 		&__link {
 			padding: 0;
 			font-size: 18px;
+
+			&::after {
+				position: absolute;
+				content: '';
+				width: 0%;
+				height: 3px;
+				background-color: $color-main-green;
+				left: 50%;
+				bottom: -5px;
+				transition: all 0.3s ease-in-out;
+			}
+			&:hover::after {
+				width: 100%;
+				left: 0;
+			}
 		}
 	}
 }

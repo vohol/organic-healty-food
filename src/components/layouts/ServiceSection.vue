@@ -127,8 +127,8 @@ export default {
 	</section>
 </template>
 
-<style lang="scss" scoped>
-.svg-long-arrow-dims {
+<style lang="scss">
+.service .svg-long-arrow-dims {
 	width: 33px;
 	height: 16px;
 }
@@ -268,96 +268,101 @@ export default {
 		}
 	}
 }
-
-.splide-slide {
-	display: flex;
-	align-items: center;
-	padding: 20px;
-	transition: all 0.3s;
-
-	&__icon-wrapper {
-		flex-shrink: 0;
-		@include flex-center;
-		@include wh(40px);
-		border-radius: 50px;
-		background-color: $color-light-green;
-		margin-right: 14px;
-		transition: all 0.3s;
-	}
-
-	&__title {
-		font-weight: 700;
-		font-size: 16px;
-		line-height: 150%;
-		margin-bottom: 8px;
-	}
-
-	&__description {
-		font-weight: 400;
-		font-size: 14px;
-		line-height: 143%;
-		color: $color-pale-black;
-	}
-
-	&__icon {
-		@include wh(40px);
-	}
-}
-
-.splide .is-active {
-	background-color: $color-light-green;
-	.splide-slide__icon-wrapper {
-		background-color: #ffffff;
-	}
-}
-
-@media screen and (min-width: $tablet) {
+.service {
 	.splide-slide {
-		padding: 40px 59px;
+		display: flex;
+		align-items: center;
+		padding: 20px;
+		transition: all 0.3s;
 
 		&__icon-wrapper {
-			@include wh(80px);
-			margin-right: 24px;
+			flex-shrink: 0;
+			@include flex-center;
+			@include wh(40px);
+			border-radius: 50px;
+			background-color: $color-light-green;
+			margin-right: 14px;
+			transition: all 0.3s;
 		}
 
 		&__title {
-			font-size: 20px;
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 150%;
 			margin-bottom: 8px;
 		}
 
 		&__description {
-			font-size: 12px;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 143%;
+			color: $color-pale-black;
+		}
+
+		&__icon {
+			@include wh(40px);
+		}
+	}
+
+	.splide .is-active {
+		background-color: $color-light-green;
+		.splide-slide__icon-wrapper {
+			background-color: #ffffff;
 		}
 	}
 }
 
-.splide__arrow--prev {
-	display: none;
+@media screen and (min-width: $tablet) {
+	.service {
+		.splide-slide {
+			padding: 40px 59px;
+
+			&__icon-wrapper {
+				@include wh(80px);
+				margin-right: 24px;
+			}
+
+			&__title {
+				font-size: 20px;
+				margin-bottom: 8px;
+			}
+
+			&__description {
+				font-size: 12px;
+			}
+		}
+	}
 }
 
-.splide__arrow--next {
-	bottom: -30px !important;
-	max-width: 500px;
-	border-radius: unset;
-	width: 100%;
-	min-height: 32px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	background: transparent;
-
-	.arrow-icon {
-		fill: $color-main-green;
-		transform: rotate(90deg);
+.service {
+	.splide__arrow--prev {
+		display: none;
 	}
 
-	& .arrow-icon {
-		transform: rotate(90deg);
-		animation: move 1.25s infinite;
-	}
-	&:hover .arrow-icon {
-		animation-play-state: paused;
+	.splide__arrow--next {
+		bottom: -30px !important;
+		max-width: 500px;
+		border-radius: unset;
+		width: 100%;
+		min-height: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		background: transparent;
+
+		.arrow-icon {
+			fill: $color-main-green;
+			transform: rotate(90deg);
+		}
+
+		& .arrow-icon {
+			transform: rotate(90deg);
+			animation: move 1.25s infinite;
+		}
+		&:hover .arrow-icon {
+			animation-play-state: paused;
+		}
 	}
 }
 
