@@ -76,7 +76,7 @@ export default {
 		@include py(35px);
 		display: flex;
 		flex-direction: column;
-		align-items: start;
+		align-items: flex-start;
 		gap: 50px;
 	}
 }

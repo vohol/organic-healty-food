@@ -11,7 +11,6 @@ export default {
 </script>
 
 <template>
-	<router-view></router-view>
 	<InnerHero :title="'store'"> Store </InnerHero>
 	<StoreList />
 	<NewsletterSection />
