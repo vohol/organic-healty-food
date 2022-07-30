@@ -24,9 +24,9 @@ export default {
 <template>
 	<InnerHero :title="'about us'"> About us </InnerHero>
 	<AboutUsSection />
-	<OurTeam />
 	<ServiceSection />
 	<ProcessSection />
+	<OurTeam />
 	<NewsletterSection />
 </template>
 

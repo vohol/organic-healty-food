@@ -33,6 +33,15 @@ export default {
 		};
 	},
 	components: { SectionTitle, SectionDescription },
+	mounted() {
+		const items = document.querySelectorAll('.about-us-item');
+		let delay = 50;
+
+		items.forEach((el) => {
+			el.dataset.aosDelay = delay;
+			delay += 150;
+		});
+	},
 };
 </script>
 
@@ -45,7 +54,13 @@ export default {
 				cursus magna, vel scelerisque nisl consectetur et.</SectionDescription
 			>
 			<div class="about-us__content">
-				<div v-for="item in dataList" :key="item.id" class="about-us-item">
+				<div
+					v-for="item in dataList"
+					:key="item.id"
+					class="about-us-item"
+					data-aos="fade-up"
+					data-aos-once="true"
+				>
 					<div class="about-us-item__photo">
 						<img
 							:src="require(`@/assets/img/about-${item.id}.png`)"
