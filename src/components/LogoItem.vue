@@ -61,7 +61,7 @@ export default {
 	</router-link>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .logo {
 	display: inline-block;
 	width: calc(105px * 0.8);
@@ -98,7 +98,7 @@ export default {
 	}
 
 	&.active &__leaf {
-		transform: rotate(-1turn) !important;
+		transform: rotate(-1turn);
 	}
 }
 </style>

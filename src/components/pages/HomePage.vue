@@ -1,7 +1,4 @@
 <script>
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
 import HeroSection from '../layouts/HeroSection.vue';
 import ServiceSection from '../layouts/ServiceSection.vue';
 import ProcessSection from '../layouts/ProcessSection.vue';
@@ -23,7 +20,6 @@ export default {
 		FeatureProducts,
 	},
 	mounted() {
-		AOS.init();
 		window.scrollTo(0, 0);
 	},
 };

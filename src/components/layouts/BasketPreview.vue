@@ -154,6 +154,7 @@ export default {
 	}
 
 	&__checkout {
+		width: 100%;
 		text-align: center;
 		text-transform: uppercase !important;
 	}

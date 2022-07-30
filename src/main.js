@@ -20,14 +20,12 @@ const router = createRouter({
 			path: '/store',
 			name: 'store',
 			component: Store,
-			children: [
-				{
-					path: ':productName' + '-' + ':id',
-					name: 'product',
-					component: Product,
-					props: true,
-				},
-			],
+		},
+		{
+			path: '/store/:productName' + '-' + ':id',
+			name: 'product',
+			component: Product,
+			props: true,
 		},
 		{
 			path: '/about-us',

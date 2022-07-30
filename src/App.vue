@@ -1,4 +1,7 @@
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import { mapActions } from 'vuex';
 import AppHeader from './components/layouts/AppHeader.vue';
 import AppFooter from './components/layouts/AppFooter.vue';
@@ -8,7 +11,8 @@ export default {
 	components: { AppHeader, AppFooter },
 	methods: mapActions(['fetchProducts', 'getBasketData']),
 
-	async mounted() {
+	mounted() {
+		AOS.init();
 		this.fetchProducts();
 		this.getBasketData();
 	},
