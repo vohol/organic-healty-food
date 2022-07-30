@@ -202,6 +202,17 @@ export default {
 }
 
 .accordion {
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		height: 1px;
+		background: rgba($color-pale-black, 0.3);
+	}
+
 	&__summary-wrapper {
 		display: flex;
 		align-items: center;
@@ -226,7 +237,7 @@ export default {
 	&__details-wrapper {
 		height: 0;
 		overflow: hidden;
-		transition: all 0.4s;
+		transition: all 0.4s linear;
 	}
 
 	&__details {

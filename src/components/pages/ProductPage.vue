@@ -87,7 +87,6 @@ export default {
 </script>
 
 <template>
-	<router-view></router-view>
 	<InnerHero
 		:title="product.name"
 		:gapLinks="[{ name: 'store', link: '/store/' }]"
