@@ -20,6 +20,14 @@ const router = createRouter({
 			path: '/store',
 			name: 'store',
 			component: Store,
+			children: [
+				{
+					path: ':productName' + '-' + ':id',
+					name: 'product',
+					component: Product,
+					props: true,
+				},
+			],
 		},
 		{
 			path: '/about-us',
@@ -31,13 +39,8 @@ const router = createRouter({
 			name: 'contact',
 			component: Contact,
 		},
-		{
-			path: '/store/:productName' + '-' + ':id',
-			name: 'product',
-			component: Product,
-			props: true,
-		},
 	],
+	linkActiveClass: 'active',
 });
 
 const app = createApp(App);
