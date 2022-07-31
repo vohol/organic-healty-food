@@ -5,10 +5,11 @@ import 'aos/dist/aos.css';
 import { mapActions } from 'vuex';
 import AppHeader from './components/layouts/AppHeader.vue';
 import AppFooter from './components/layouts/AppFooter.vue';
+import GoTop from './components/layouts/GoTop.vue';
 
 export default {
 	name: 'App',
-	components: { AppHeader, AppFooter },
+	components: { AppHeader, AppFooter, GoTop },
 	methods: mapActions(['fetchProducts', 'getBasketData']),
 
 	async mounted() {
@@ -25,6 +26,7 @@ export default {
 		<router-view />
 	</main>
 	<AppFooter />
+	<GoTop />
 </template>
 
 <style lang="scss">
@@ -45,6 +47,7 @@ body.nonscroll {
 * {
 	color: $color-black;
 	font-family: 'DM Sans', sans-serif;
+	scroll-behavior: smooth;
 }
 
 .container {

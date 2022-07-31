@@ -134,7 +134,7 @@ export default {
 							</p>
 						</div>
 					</div>
-					<GreenBtn class="contact-form__btn" :isSubmit="true">Send</GreenBtn>
+					<GreenBtn class="contact-form__btn">Send</GreenBtn>
 					<p class="successful-msg" v-if="successfulMsg">
 						Thank you for your response ❤
 					</p>

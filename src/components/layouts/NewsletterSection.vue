@@ -65,7 +65,7 @@ export default {
 						Thank you for your subscribe ❤
 					</p>
 				</div>
-				<GreenBtn class="subscribe__btn" :isSubmit="true">subscribe</GreenBtn>
+				<GreenBtn class="subscribe__btn">subscribe</GreenBtn>
 			</form>
 		</div>
 		<div

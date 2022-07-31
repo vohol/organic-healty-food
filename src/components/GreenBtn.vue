@@ -1,16 +1,9 @@
 <script>
-export default {
-	props: {
-		isSubmit: Boolean,
-	},
-};
+export default {};
 </script>
 
 <template>
-	<button v-if="isSubmit" class="grn-btn" :type="submit">
-		<slot />
-	</button>
-	<button v-else class="grn-btn">
+	<button class="grn-btn">
 		<slot />
 	</button>
 </template>
