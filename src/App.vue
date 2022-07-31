@@ -11,7 +11,7 @@ export default {
 	components: { AppHeader, AppFooter },
 	methods: mapActions(['fetchProducts', 'getBasketData']),
 
-	mounted() {
+	async mounted() {
 		AOS.init();
 		this.fetchProducts();
 		this.getBasketData();

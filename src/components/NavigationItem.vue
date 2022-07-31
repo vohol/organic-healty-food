@@ -158,13 +158,14 @@ export default {
 		padding-top: 154px;
 		max-width: 220px;
 		top: 0;
+		right: 0;
+		bottom: 0;
 		width: 100%;
-		height: 100vh;
-		right: -100%;
+		transform: translateX(100%);
+		transition: transform 0.3s;
 		background-color: #ffffff;
-		transition: right 0.2s;
 		&--mobile {
-			right: 0;
+			transform: translateX(0);
 			z-index: 5;
 			& + .site-overlay {
 				opacity: 1;
@@ -199,6 +200,7 @@ export default {
 			padding: 0;
 			max-width: unset;
 			width: auto;
+			transform: translateX(0);
 		}
 
 		&__item {

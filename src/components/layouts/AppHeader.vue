@@ -118,6 +118,11 @@ export default {
 }
 
 @media screen and (min-width: $desktop) {
+	.header__logo {
+		position: absolute;
+		right: 50%;
+		transform: translateX(50%);
+	}
 }
 
 @media screen and (min-width: $tablet) {

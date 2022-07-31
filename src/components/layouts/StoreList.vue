@@ -92,7 +92,7 @@ export default {
 			</ul>
 			<div class="pagination" v-if="totalPages > 1">
 				<button
-					class="material-symbols-outlined pagination__item"
+					class="material-symbols-outlined pagination__item pagination__item--nav"
 					@click="
 						currentPage > 1 ? currentPage-- : (currentPage = 1);
 						scrollToStoreSection();
@@ -115,7 +115,7 @@ export default {
 					</button>
 				</div>
 				<button
-					class="material-symbols-outlined pagination__item"
+					class="material-symbols-outlined pagination__item pagination__item--nav"
 					@click="
 						currentPage < totalPages
 							? currentPage++
@@ -167,7 +167,7 @@ export default {
 .filters {
 	display: flex;
 	justify-content: center;
-	gap: 10px;
+	gap: 15px;
 	margin-bottom: 50px;
 	flex-wrap: wrap;
 
@@ -175,12 +175,11 @@ export default {
 		@include flex-center;
 		@include px(20px);
 		height: 30px;
-		font-size: 13px;
+		font-size: 14px;
 		font-weight: 500;
 		border-radius: 30px;
 		text-transform: uppercase;
 		cursor: pointer;
-		margin: 5px;
 		@include button-style;
 	}
 }
@@ -198,6 +197,7 @@ export default {
 
 	&__item {
 		@include flex-center;
+		display: none;
 		padding: 0px 9px;
 		font-size: 18px;
 		min-width: 40px;
@@ -205,6 +205,19 @@ export default {
 		line-height: 21px;
 		border-radius: 10px;
 		@include button-style;
+
+		&--active,
+		&--nav {
+			display: flex;
+		}
+	}
+}
+
+@media screen and (min-width: $tablet) {
+	.pagination {
+		&__item {
+			display: flex;
+		}
 	}
 }
 </style>

@@ -148,7 +148,7 @@ export default {
 .error-msg {
 	position: absolute;
 	font-size: 12px;
-	bottom: -16px;
+	bottom: -18px;
 	left: 15px;
 	color: $color-pale-red;
 
@@ -161,6 +161,7 @@ export default {
 }
 
 .successful-msg {
+	position: absolute;
 	padding-top: 10px;
 	font-size: 14px;
 	font-weight: 500;
