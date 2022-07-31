@@ -1,12 +1,11 @@
 <script>
 import LogoItem from '../LogoItem.vue';
 import NavigationItem from '../NavigationItem.vue';
-import GreenBtn from '../GreenBtn.vue';
 import BasketPreview from './BasketPreview.vue';
 import { mapGetters } from 'vuex';
 
 export default {
-	components: { LogoItem, NavigationItem, GreenBtn, BasketPreview },
+	components: { LogoItem, NavigationItem, BasketPreview },
 	methods: {
 		openBasket() {
 			document.querySelector('.basket').classList.add('basket--active');
@@ -36,7 +35,6 @@ export default {
 					</svg>
 					<div class="basket-label" v-if="getBasketQty">{{ getBasketQty }}</div>
 				</div>
-				<green-btn class="header__reg-btn">Register Now</green-btn>
 			</div>
 		</div>
 		<BasketPreview />
@@ -73,7 +71,7 @@ export default {
 	z-index: 3;
 
 	&__container {
-		padding: 20px;
+		padding: 12px 20px !important;
 		display: flex;
 		flex-direction: row-reverse;
 		align-items: center;
@@ -81,7 +79,7 @@ export default {
 	}
 
 	&__icons {
-		margin-right: 40px;
+		margin-right: 50px;
 		position: absolute;
 		right: 0;
 		z-index: 5;
@@ -104,20 +102,9 @@ export default {
 			box-shadow: 0 0 20px 1px $color-main-green;
 		}
 	}
-
-	&__reg-btn {
-		position: fixed;
-		top: 111px;
-		right: -100%;
-
-		&.mobile {
-			right: 75px;
-			z-index: 5;
-		}
-	}
 }
 
-@media screen and (min-width: $desktop) {
+@media screen and (min-width: $tablet) {
 	.header__logo {
 		position: absolute;
 		right: 50%;
@@ -131,16 +118,19 @@ export default {
 			flex-direction: row;
 		}
 
-		&__reg-btn {
-			margin-left: 12px;
-			position: unset;
-		}
-
 		&__icons {
 			position: unset;
 			right: unset;
 			z-index: unset;
 			margin-right: 0;
+		}
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	.header {
+		&__container {
+			padding: 25px 10px !important;
 		}
 	}
 }

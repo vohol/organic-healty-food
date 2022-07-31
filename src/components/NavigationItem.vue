@@ -31,14 +31,10 @@ export default {
 	methods: {
 		toggleMobileMenu() {
 			this.mobile = !this.mobile;
-			document.querySelector('.header__reg-btn').classList.toggle('mobile');
-			document.querySelector('.header__logo').classList.toggle('active');
 			document.body.classList.toggle('nonscroll');
 		},
 		closeMobileMenu() {
 			this.mobile = false;
-			document.querySelector('.header__reg-btn')?.classList.remove('mobile');
-			document.querySelector('.header__logo')?.classList.remove('active');
 			document.body.classList.remove('nonscroll');
 		},
 	},
@@ -83,7 +79,7 @@ export default {
 	left: 0;
 	right: 0;
 	z-index: 4;
-	transition: all 0.2s ease-in-out;
+	transition: all 0.4s ease-in-out;
 	background-color: rgba(0, 0, 0, 0.5);
 	opacity: 0;
 	visibility: hidden;
@@ -104,7 +100,7 @@ export default {
 		width: 100%;
 		height: 2px;
 		left: 0;
-		transition: all 0.3s ease;
+		transition: all 0.4s ease;
 	}
 
 	&::before {
@@ -155,14 +151,14 @@ export default {
 		display: flex;
 		flex-direction: column;
 		position: fixed;
-		padding-top: 154px;
+		padding-top: 100px;
 		max-width: 220px;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		width: 100%;
 		transform: translateX(100%);
-		transition: transform 0.3s;
+		transition: transform 0.4s;
 		background-color: #ffffff;
 		&--mobile {
 			transform: translateX(0);

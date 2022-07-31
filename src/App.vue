@@ -29,7 +29,13 @@ export default {
 
 <style lang="scss">
 .main {
-	padding-top: 96px;
+	padding-top: 80px;
+}
+
+@media screen and (min-width: $desktop) {
+	.main {
+		padding-top: 90px;
+	}
 }
 
 body.nonscroll {
