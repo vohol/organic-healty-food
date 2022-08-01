@@ -33,6 +33,7 @@ export default {
 				v-for="product in getBasketProducts"
 				:key="product.id"
 				:product="product"
+				@click="closeBasket"
 			/>
 		</div>
 		<div v-else class="basket__content basket__content--empty">

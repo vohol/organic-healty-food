@@ -4,9 +4,6 @@ import NewsletterSection from '../layouts/NewsletterSection.vue';
 import StoreList from '../layouts/StoreList.vue';
 export default {
 	components: { InnerHero, NewsletterSection, StoreList },
-	mounted() {
-		window.scrollTo(0, 0);
-	},
 };
 </script>
 

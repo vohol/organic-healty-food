@@ -39,6 +39,9 @@ const router = createRouter({
 		},
 	],
 	linkActiveClass: 'active',
+	scrollBehavior() {
+		document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+	},
 });
 
 const app = createApp(App);

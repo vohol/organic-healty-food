@@ -57,7 +57,6 @@ export default {
 		},
 	},
 	mounted() {
-		window.scrollTo(0, 0);
 		if (this.isLoaded) {
 			this.getProduct(this.$route);
 		}
@@ -134,6 +133,7 @@ export default {
 							watch-slides-progress
 							@swiper="setThumbsSwiper"
 							:loop="true"
+							:allow-touch-move="false"
 						>
 							<swiper-slide
 								class="product__photo-main"
@@ -234,15 +234,21 @@ export default {
 						<img src="@/assets/img/payment.webp" alt="payment banner" />
 					</div>
 					<ul>
-						<li class="product__text">Lorem ipsum dolor sit amet.</li>
-						<li class="product__text">
+						<li class="product__text product__text--li">
+							Lorem ipsum dolor sit amet.
+						</li>
+						<li class="product__text product__text--li">
 							Tempore reiciendis reprehenderit cum molestiae!
 						</li>
-						<li class="product__text">Esse ipsum voluptates culpa voluptas!</li>
-						<li class="product__text">
+						<li class="product__text product__text--li">
+							Esse ipsum voluptates culpa voluptas!
+						</li>
+						<li class="product__text product__text--li">
 							Velit expedita voluptatem repudiandae veniam!
 						</li>
-						<li class="product__text">Fugit in voluptatem aperiam iure?</li>
+						<li class="product__text product__text--li">
+							Fugit in voluptatem aperiam iure?
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -458,6 +464,19 @@ export default {
 
 		&--green {
 			color: $color-main-green;
+		}
+
+		&--li {
+			&::before {
+				content: '';
+				width: 5px;
+				height: 5px;
+				border-radius: 100%;
+				display: inline-block;
+				margin-right: 10px;
+				transform: translateY(-50%);
+				background-color: $color-main-green;
+			}
 		}
 	}
 	&__header {

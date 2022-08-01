@@ -15,9 +15,6 @@ export default {
 		ProcessSection,
 		AboutUsSection,
 	},
-	mounted() {
-		window.scrollTo(0, 0);
-	},
 };
 </script>
 

@@ -7,18 +7,18 @@ export default {
 			navigation: [
 				{
 					id: 1,
-					name: 'About Us',
-					link: '#',
+					name: 'about us',
+					link: '/about-us',
 				},
 				{
 					id: 2,
-					name: 'Service',
-					link: '#',
+					name: 'store',
+					link: '/store',
 				},
 				{
 					id: 3,
-					name: 'Menu',
-					link: '#',
+					name: 'contact',
+					link: '/contact',
 				},
 			],
 			resources: [
@@ -63,14 +63,13 @@ export default {
 			<div class="footer__column">
 				<h3 class="footer__subtitle">Navigation</h3>
 				<nav>
-					<a
+					<router-link
 						class="footer__link"
 						v-for="item in navigation"
 						:key="item.id"
-						:href="item.link"
+						:to="item.link"
+						><p class="footer__link-text">{{ item.name }}</p></router-link
 					>
-						<p class="footer__link-text">{{ item.name }}</p>
-					</a>
 				</nav>
 			</div>
 			<div class="footer__column">
@@ -171,6 +170,7 @@ export default {
 		line-height: 23px;
 		color: $color-pale-black;
 		transition: color 0.3s;
+		text-transform: capitalize;
 	}
 
 	&__icons-wrapper {
