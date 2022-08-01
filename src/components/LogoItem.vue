@@ -5,6 +5,9 @@ export default {
 			rotateRation: 0,
 		};
 	},
+	props: {
+		isMain: Boolean,
+	},
 	created() {
 		window.addEventListener('scroll', this.handleScroll);
 	},
@@ -20,7 +23,7 @@ export default {
 			this.setRotate(logoAnimatedPart);
 		},
 		hoverScroll(event) {
-			const logo = event.target.closest('.logo');
+			const logo = event.target.closest('.logo--main');
 			if (logo) {
 				this.rotateRation += 90;
 
@@ -30,7 +33,7 @@ export default {
 			}
 		},
 		disableHoverScroll(event) {
-			const logo = event.target.closest('.logo');
+			const logo = event.target.closest('.logo--main');
 			if (logo) {
 				this.rotateRation -= 90;
 
@@ -49,6 +52,7 @@ export default {
 	<router-link
 		to="/"
 		class="logo"
+		:class="[{ 'logo--main': isMain }]"
 		@mouseover="hoverScroll"
 		@mouseout="disableHoverScroll"
 	>

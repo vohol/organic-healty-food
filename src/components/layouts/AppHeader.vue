@@ -70,7 +70,7 @@ export default {
 	<header class="header">
 		<div class="container header__container">
 			<NavigationItem class="header__nav" />
-			<logo-item class="header__logo" v-show="!isActiveSearch" />
+			<logo-item class="header__logo" v-show="!isActiveSearch" :isMain="true" />
 			<div class="main-search" v-if="isActiveSearch">
 				<input
 					type="search"

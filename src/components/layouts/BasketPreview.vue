@@ -22,7 +22,7 @@ export default {
 			this.closeBasket();
 		},
 		getBasketAmount(newVal, old) {
-			if (newVal > old) this.openBasket();
+			if (newVal !== old) this.openBasket();
 		},
 	},
 	components: { BasketItem, GreenBtn },

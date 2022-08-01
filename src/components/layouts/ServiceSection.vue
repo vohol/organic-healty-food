@@ -54,6 +54,7 @@ export default {
 			breakpoints: {
 				846: {
 					height: '350px',
+					drag: false,
 				},
 			},
 		};
