@@ -9,12 +9,15 @@ import 'swiper/css/navigation';
 
 import GreenBtn from '../GreenBtn.vue';
 import InnerHero from '../layouts/InnerHero.vue';
+import FsLightbox from 'fslightbox-vue/v3';
 
 export default {
 	data() {
 		return {
 			quantity: 1,
 			product: false,
+			toggler: false,
+			slide: 1,
 		};
 	},
 	computed: {
@@ -48,6 +51,10 @@ export default {
 				}
 			});
 		},
+		openLightboxOnSlide: function (number) {
+			this.slide = number;
+			this.toggler = !this.toggler;
+		},
 	},
 	mounted() {
 		window.scrollTo(0, 0);
@@ -69,6 +76,7 @@ export default {
 		SwiperSlide,
 		GreenBtn,
 		InnerHero,
+		FsLightbox,
 	},
 	setup() {
 		const thumbsSwiper = ref(null);
@@ -95,11 +103,21 @@ export default {
 	<section class="product">
 		<div v-if="!product">Loading...</div>
 		<div v-else class="container product__container">
+			<FsLightbox
+				:toggler="toggler"
+				:slide="slide"
+				:sources="
+					product.images
+						.split(',')
+						.map((el) => require(`@/assets/img/products/${el}.png`))
+				"
+			/>
 			<div class="product__header">
 				<div class="product__photo-wrapper">
 					<div
 						class="product__photo"
 						v-if="product.images.split(',').length === 1"
+						@click="toggler = !toggler"
 					>
 						<img
 							class="product__photo-main"
@@ -119,12 +137,15 @@ export default {
 								class="product__photo-main"
 								v-for="slide in product.images.split(',').length"
 								:key="slide"
-								><img
+							>
+								<img
+									@click="openLightboxOnSlide(slide)"
 									:src="
 										require(`@/assets/img/products/${product.id}-${slide}.png`)
 									"
 									:alt="product.name"
-							/></swiper-slide>
+								/>
+							</swiper-slide>
 						</swiper>
 						<div class="wrapper">
 							<swiper
@@ -440,16 +461,28 @@ export default {
 		@include px(28px);
 	}
 
-	&__photo-main {
+	&__photo-main,
+	&__photo {
 		width: 100%;
+		cursor: pointer;
 
 		img {
 			width: 100%;
 			object-fit: cover;
+			transition: transform 0.3s ease-in-out;
+		}
+
+		overflow: hidden;
+
+		&:hover {
+			img {
+				transform: scale(1.2);
+			}
 		}
 	}
 
 	&__photo-minor {
+		cursor: pointer;
 		img {
 			width: 100%;
 			object-fit: cover;
