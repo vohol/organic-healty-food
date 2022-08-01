@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import GreenBtn from '../GreenBtn.vue';
 import InnerHero from '../layouts/InnerHero.vue';
 import FsLightbox from 'fslightbox-vue/v3';
+import NewsletterSection from '../layouts/NewsletterSection.vue';
 
 export default {
 	data() {
@@ -76,6 +77,7 @@ export default {
 		GreenBtn,
 		InnerHero,
 		FsLightbox,
+		NewsletterSection,
 	},
 	setup() {
 		const thumbsSwiper = ref(null);
@@ -324,6 +326,7 @@ export default {
 			</div>
 		</div>
 	</section>
+	<NewsletterSection />
 </template>
 
 <style lang="scss">
@@ -360,10 +363,11 @@ export default {
 
 	&__item {
 		font-size: 18px;
-		padding: 14px 15px;
+		padding: 10px 15px;
 		cursor: pointer;
 		font-weight: 500;
 		color: $color-pale-black;
+		text-align: center;
 
 		&--active {
 			color: $color-black;
@@ -459,6 +463,10 @@ export default {
 }
 
 .product {
+	&__container {
+		margin-bottom: 90px;
+	}
+
 	&__text {
 		display: block;
 		font-size: 16px;
@@ -566,6 +574,7 @@ export default {
 	.product {
 		&__header {
 			flex-direction: row;
+			margin-bottom: 70px;
 		}
 		&__buy {
 			max-width: 250px;
@@ -582,7 +591,6 @@ export default {
 	&__nav-el {
 		position: absolute;
 		top: 50%;
-		z-index: 11;
 		transform: translateY(-50%);
 		cursor: pointer;
 		font-size: 40px;
