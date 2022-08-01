@@ -12,6 +12,18 @@ export default {
 			document.querySelector('.basket').classList.remove('basket--active');
 			document.body.classList.remove('nonscroll');
 		},
+		openBasket() {
+			document.querySelector('.basket').classList.add('basket--active');
+			document.body.classList.add('nonscroll');
+		},
+	},
+	watch: {
+		$route() {
+			this.closeBasket();
+		},
+		getBasketAmount(newVal, old) {
+			if (newVal > old) this.openBasket();
+		},
 	},
 	components: { BasketItem, GreenBtn },
 };
@@ -33,7 +45,6 @@ export default {
 				v-for="product in getBasketProducts"
 				:key="product.id"
 				:product="product"
-				@click="closeBasket"
 			/>
 		</div>
 		<div v-else class="basket__content basket__content--empty">

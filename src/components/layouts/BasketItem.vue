@@ -125,8 +125,8 @@ export default {
 	&__delete {
 		color: $color-main-green;
 		background: transparent;
-		padding: 20px 10px;
-		align-self: stratch;
+		padding: 5px 10px;
+		align-self: flex-start;
 		transition: color 0.2s;
 
 		&:hover {

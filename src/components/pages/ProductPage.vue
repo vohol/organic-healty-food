@@ -327,6 +327,10 @@ export default {
 </template>
 
 <style lang="scss">
+.fslightbox-nav span {
+	color: $color-white;
+}
+
 .preloader {
 	background: #f8f5f0;
 
