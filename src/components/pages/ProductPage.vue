@@ -168,6 +168,7 @@ export default {
 				</div>
 				<div class="product__content">
 					<h2 class="product__name">{{ product.name }}</h2>
+					<span class="product__text">Price:</span>
 					<div v-if="!product.promo" class="product__price">
 						$ {{ product.price }}
 					</div>
@@ -175,6 +176,14 @@ export default {
 						${{ product.promo }}
 						<span class="product__price--reduced">${{ product.price }}</span>
 					</div>
+					<span class="product__text product__text--green flex-sp">
+						<span
+							class="material-symbols-outlined product__text product__text--green"
+						>
+							check
+						</span>
+						Availability: In Stock
+					</span>
 					<div class="quantity product__quantity">
 						<button
 							class="quantity__btn quantity__btn--left"
@@ -198,6 +207,20 @@ export default {
 					<GreenBtn class="product__buy" @click="addToBasket"
 						>Add to cart</GreenBtn
 					>
+					<div class="payment-banner">
+						<img src="@/assets/img/payment.webp" alt="payment banner" />
+					</div>
+					<ul>
+						<li class="product__text">Lorem ipsum dolor sit amet.</li>
+						<li class="product__text">
+							Tempore reiciendis reprehenderit cum molestiae!
+						</li>
+						<li class="product__text">Esse ipsum voluptates culpa voluptas!</li>
+						<li class="product__text">
+							Velit expedita voluptatem repudiandae veniam!
+						</li>
+						<li class="product__text">Fugit in voluptatem aperiam iure?</li>
+					</ul>
 				</div>
 			</div>
 			<div class="tabs">
@@ -286,13 +309,13 @@ export default {
 			height: 1px;
 			width: 100%;
 			background: rgba($color-pale-black, 0.5);
-			bottom: 1px;
+			bottom: 0px;
 			z-index: -1;
 		}
 	}
 
 	&__item {
-		font-size: 14px;
+		font-size: 18px;
 		padding: 14px 15px;
 		cursor: pointer;
 		font-weight: 500;
@@ -303,7 +326,7 @@ export default {
 			font-weight: 500;
 			border: 1px solid rgba($color-pale-black, 0.5);
 			background: white;
-			border-bottom: 0;
+			border-bottom-color: $color-white;
 		}
 	}
 
@@ -313,8 +336,9 @@ export default {
 
 		li,
 		p {
-			font-size: 14px;
+			font-size: 16px;
 			color: $color-pale-black;
+			line-height: 1.5;
 		}
 
 		p,
@@ -391,16 +415,29 @@ export default {
 }
 
 .product {
+	&__text {
+		display: block;
+		font-size: 16px;
+		color: $color-pale-black;
+		line-height: 1.5;
+		margin-bottom: 5px;
+
+		&--green {
+			color: $color-main-green;
+		}
+	}
 	&__header {
 		padding-top: 50px;
 		display: flex;
 		flex-direction: column;
 		gap: 50px;
 		margin-bottom: 50px;
+		align-items: center;
 	}
 
 	&__photo-wrapper {
-		@include max-res-width(600px);
+		@include max-res-width(550px);
+		@include px(28px);
 	}
 
 	&__photo-main {
@@ -426,7 +463,7 @@ export default {
 	&__name {
 		text-transform: capitalize;
 		font-weight: 500;
-		font-size: 24px;
+		font-size: 30px;
 		line-height: 1.5;
 		margin-bottom: 20px;
 	}
@@ -452,6 +489,7 @@ export default {
 	&__buy {
 		max-width: 200px;
 		text-align: center;
+		margin-bottom: 50px;
 	}
 }
 
@@ -459,9 +497,6 @@ export default {
 	.product {
 		&__header {
 			flex-direction: row;
-		}
-		&__content {
-			padding-top: 100px;
 		}
 		&__buy {
 			max-width: 250px;
@@ -490,7 +525,22 @@ export default {
 		right: -40px;
 	}
 	&__prev {
-		left: -40px;
+		left: -30px;
+	}
+}
+
+.flex-sp {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.payment-banner {
+	@include max-res-width(500px);
+	margin-bottom: 30px;
+	img {
+		width: 100%;
+		object-fit: fill;
 	}
 }
 </style>

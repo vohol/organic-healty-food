@@ -96,9 +96,5 @@ export default {
 		transition: all 0.3s;
 		transform-origin: 23.5px 32px;
 	}
-
-	&.active &__leaf {
-		transform: rotate(-1turn);
-	}
 }
 </style>

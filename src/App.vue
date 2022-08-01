@@ -5,11 +5,11 @@ import 'aos/dist/aos.css';
 import { mapActions } from 'vuex';
 import AppHeader from './components/layouts/AppHeader.vue';
 import AppFooter from './components/layouts/AppFooter.vue';
-import GoTop from './components/layouts/GoTop.vue';
+import ScrollTop from './components/layouts/ScrollTop.vue';
 
 export default {
 	name: 'App',
-	components: { AppHeader, AppFooter, GoTop },
+	components: { AppHeader, AppFooter, ScrollTop },
 	methods: mapActions(['fetchProducts', 'getBasketData']),
 
 	async mounted() {
@@ -26,7 +26,7 @@ export default {
 		<router-view />
 	</main>
 	<AppFooter />
-	<GoTop />
+	<ScrollTop />
 </template>
 
 <style lang="scss">

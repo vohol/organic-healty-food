@@ -12,10 +12,10 @@ export default {
 <template>
 	<section class="inner-hero">
 		<div class="container inner-hero__container">
-			<SectionTitle class="inner-hero__title" :main="true">
+			<SectionTitle data-aos="zoom-in" class="inner-hero__title" :main="true">
 				<slot />
 			</SectionTitle>
-			<nav class="inner-nav">
+			<nav data-aos="zoom-in" class="inner-nav">
 				<router-link to="/" class="inner-nav__item">Home</router-link>
 				<router-link
 					v-for="link in gapLinks"
@@ -66,10 +66,10 @@ export default {
 	justify-content: center;
 
 	&__item {
-		font-size: 18px;
+		font-size: 24px;
 		font-weight: 500;
-		font-style: italic;
 		text-transform: capitalize;
+		font-family: 'Dancing Script', cursive;
 
 		&:not(:last-child) {
 			margin-right: 3px;
@@ -78,9 +78,9 @@ export default {
 			&::after {
 				margin-left: 3px;
 				content: '/';
-				font-size: 18px;
+				font-size: 24px;
 				font-weight: 500;
-				font-style: italic;
+				font-family: 'Dancing Script', cursive;
 			}
 
 			&:hover {
@@ -93,14 +93,14 @@ export default {
 @media screen and (min-width: $tablet) {
 	.inner-nav {
 		&__item {
-			font-size: 24px;
+			font-size: 30px;
 
 			&:not(:last-child) {
 				margin-right: 5px;
 
 				&::after {
 					margin-left: 5px;
-					font-size: 24px;
+					font-size: 30px;
 				}
 			}
 		}

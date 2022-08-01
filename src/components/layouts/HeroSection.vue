@@ -69,10 +69,10 @@ export default {
 				</div>
 			</div>
 			<div class="hero__title-wrapper">
-				<SectionTitle class="hero__title" :main="true"
+				<SectionTitle data-aos="zoom-in" class="hero__title" :main="true"
 					>Organic & Healty Food</SectionTitle
 				>
-				<SectionDescription class="hero__description">
+				<SectionDescription data-aos="zoom-in" class="hero__description">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industry's standard dummy text ever
 					since the 1500s, when an unknown printer took a
@@ -263,6 +263,10 @@ export default {
 		position: relative;
 		z-index: 2;
 		margin-bottom: 10px;
+	}
+
+	&__icon {
+		@include wh(32px);
 	}
 }
 
