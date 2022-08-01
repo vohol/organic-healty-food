@@ -101,7 +101,9 @@ export default {
 		>{{ product.name }}</InnerHero
 	>
 	<section class="product">
-		<div v-if="!product">Loading...</div>
+		<div v-if="!product" class="preloader">
+			<img src="@/assets/img/preloader.gif" alt="avocado" />
+		</div>
 		<div v-else class="container product__container">
 			<FsLightbox
 				:toggler="toggler"
@@ -319,6 +321,17 @@ export default {
 </template>
 
 <style lang="scss">
+.preloader {
+	background: #f8f5f0;
+
+	img {
+		width: 30%;
+		object-fit: contain;
+		margin: 0 auto;
+		display: block;
+	}
+}
+
 .tabs {
 	&__header {
 		display: flex;
