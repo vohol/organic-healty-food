@@ -21,10 +21,19 @@ export default {
 		search(event) {
 			if (event.target.value.length >= 3) {
 				this.isValid = true;
-				let regExp = new RegExp(event.target.value, 'gi');
+				const request = event.target.value;
+
+				let regExp = new RegExp(`^${request}| ${request}`, 'gi');
 				this.searchResult = this.allProducts.filter((el) =>
 					regExp.test(el.name)
 				);
+
+				let secondRexExp = new RegExp(request, 'gi');
+
+				this.allProducts.forEach((el) => {
+					if (secondRexExp.test(el.name) && !this.searchResult.includes(el))
+						this.searchResult.push(el);
+				});
 			} else {
 				this.isValid = false;
 				this.searchResult.length = 0;
