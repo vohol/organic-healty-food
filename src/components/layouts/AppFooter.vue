@@ -7,17 +7,17 @@ export default {
 			navigation: [
 				{
 					id: 1,
-					name: 'about us',
+					name: 'About us',
 					link: '/about-us',
 				},
 				{
 					id: 2,
-					name: 'store',
+					name: 'Store',
 					link: '/store',
 				},
 				{
 					id: 3,
-					name: 'contact',
+					name: 'Contact',
 					link: '/contact',
 				},
 			],
@@ -170,7 +170,6 @@ export default {
 		line-height: 23px;
 		color: $color-pale-black;
 		transition: color 0.3s;
-		text-transform: capitalize;
 	}
 
 	&__icons-wrapper {

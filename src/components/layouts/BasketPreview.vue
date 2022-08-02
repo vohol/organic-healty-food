@@ -127,7 +127,7 @@ export default {
 	&__content {
 		padding: 30px 20px;
 		flex: 1;
-		overflow: scroll;
+		overflow: auto;
 		display: flex;
 		flex-direction: column;
 		gap: 30px;
