@@ -123,6 +123,7 @@ export default {
 						@click="toggler = !toggler"
 					>
 						<img
+							loading="lazy"
 							class="product__photo-main"
 							:src="require(`@/assets/img/products/${product.id}-1.png`)"
 							:alt="product.name"
@@ -143,6 +144,7 @@ export default {
 								:key="slide"
 							>
 								<img
+									loading="lazy"
 									@click="openLightboxOnSlide(slide)"
 									:src="
 										require(`@/assets/img/products/${product.id}-${slide}.png`)
@@ -172,6 +174,7 @@ export default {
 									class="product__photo-minor"
 								>
 									<img
+										loading="lazy"
 										:src="
 											require(`@/assets/img/products/${product.id}-${slide}.png`)
 										"
@@ -233,7 +236,11 @@ export default {
 						>Add to cart</GreenBtn
 					>
 					<div class="payment-banner">
-						<img src="@/assets/img/payment.webp" alt="payment banner" />
+						<img
+							loading="lazy"
+							src="@/assets/img/payment.webp"
+							alt="payment banner"
+						/>
 					</div>
 					<ul>
 						<li class="product__text product__text--li">

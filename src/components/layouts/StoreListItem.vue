@@ -51,6 +51,7 @@ export default {
 			class="product-item__picture"
 		>
 			<img
+				loading="lazy"
 				class="product-item__frst-img"
 				:src="require(`@/assets/img/products/${product.id}-1.png`)"
 				:alt="product.name"
@@ -68,11 +69,13 @@ export default {
 			class="product-item__picture product-item__picture--double"
 		>
 			<img
+				loading="lazy"
 				class="product-item__frst-img"
 				:src="require(`@/assets/img/products/${product.id}-1.png`)"
 				:alt="product.name"
 			/>
 			<img
+				loading="lazy"
 				class="product-item__scnd-img"
 				:src="require(`@/assets/img/products/${product.id}-2.png`)"
 				:alt="product.name"

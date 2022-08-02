@@ -115,6 +115,7 @@ export default {
 					>
 						<div class="search-item__img">
 							<img
+								loading="lazy"
 								:src="require(`@/assets/img/products/${product.id}-1.png`)"
 								:alt="product.name"
 							/>
