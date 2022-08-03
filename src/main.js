@@ -9,7 +9,8 @@ import Contact from '@/components/pages/ContactPage.vue';
 import Product from '@/components/pages/ProductPage.vue';
 
 const router = createRouter({
-	history: createWebHistory(),
+	mode: 'hash',
+	history: createWebHistory('/organic-healty-food/'),
 	routes: [
 		{
 			path: '/',
