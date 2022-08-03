@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import store from './store';
 import App from './App.vue';
 import Home from '@/components/pages/HomePage.vue';
@@ -9,8 +9,7 @@ import Contact from '@/components/pages/ContactPage.vue';
 import Product from '@/components/pages/ProductPage.vue';
 
 const router = createRouter({
-	mode: 'hash',
-	history: createWebHistory('/organic-healty-food/'),
+	history: createWebHashHistory('/organic-healty-food/'),
 	routes: [
 		{
 			path: '/',
