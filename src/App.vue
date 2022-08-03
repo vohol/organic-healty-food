@@ -6,10 +6,11 @@ import { mapActions } from 'vuex';
 import AppHeader from './components/layouts/AppHeader.vue';
 import AppFooter from './components/layouts/AppFooter.vue';
 import ScrollTop from './components/layouts/ScrollTop.vue';
+import OrderConfirmation from './components/layouts/OrderConfirmation.vue';
 
 export default {
 	name: 'App',
-	components: { AppHeader, AppFooter, ScrollTop },
+	components: { AppHeader, AppFooter, ScrollTop, OrderConfirmation },
 	methods: mapActions(['fetchProducts', 'getBasketData']),
 
 	async mounted() {
@@ -27,6 +28,7 @@ export default {
 	</main>
 	<AppFooter />
 	<ScrollTop />
+	<OrderConfirmation />
 </template>
 
 <style lang="scss">

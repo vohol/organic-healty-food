@@ -1,5 +1,5 @@
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 import BasketItem from './BasketItem.vue';
 import GreenBtn from '../GreenBtn.vue';
 
@@ -8,6 +8,7 @@ export default {
 		...mapGetters(['getBasketProducts', 'getBasketAmount']),
 	},
 	methods: {
+		...mapMutations(['clearBasketData']),
 		closeBasket() {
 			document.querySelector('.basket').classList.remove('basket--active');
 			document.body.classList.remove('nonscroll');
@@ -16,13 +17,20 @@ export default {
 			document.querySelector('.basket').classList.add('basket--active');
 			document.body.classList.add('nonscroll');
 		},
+		orderConfirm() {
+			this.clearBasketData();
+			document.querySelector('.basket').classList.remove('basket--active');
+			document
+				.querySelector('.order-confirm')
+				.classList.add('order-confirm--active');
+		},
 	},
 	watch: {
 		$route() {
 			this.closeBasket();
 		},
 		getBasketAmount(newVal, old) {
-			if (newVal !== old) this.openBasket();
+			if (newVal > old) this.openBasket();
 		},
 	},
 	components: { BasketItem, GreenBtn },
@@ -56,7 +64,9 @@ export default {
 				<span>Total:</span>
 				<span>${{ getBasketAmount }} USD</span>
 			</div>
-			<GreenBtn class="basket__checkout">Checkout</GreenBtn>
+			<GreenBtn class="basket__checkout" @click="orderConfirm"
+				>Checkout</GreenBtn
+			>
 		</div>
 	</div>
 	<div class="basket-overlay" @click="closeBasket"></div>

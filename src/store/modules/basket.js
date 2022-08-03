@@ -14,6 +14,9 @@ export default {
 		updateBasketData(state, products) {
 			state.products = products;
 		},
+		clearBasketData(state) {
+			state.products.length = 0;
+		},
 		addProductToBasket(state, newProduct) {
 			let result = false;
 
