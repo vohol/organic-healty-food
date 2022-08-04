@@ -90,7 +90,7 @@ export default {
 					:product="product"
 				></StoreListItem>
 			</ul>
-			<div class="pagination" v-if="totalPages > 1">
+			<div class="pagination" v-show="totalPages > 1">
 				<button
 					class="material-symbols-outlined pagination__item pagination__item--nav"
 					@click="

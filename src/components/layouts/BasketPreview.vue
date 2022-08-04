@@ -18,11 +18,13 @@ export default {
 			document.body.classList.add('nonscroll');
 		},
 		orderConfirm() {
-			this.clearBasketData();
-			document.querySelector('.basket').classList.remove('basket--active');
-			document
-				.querySelector('.order-confirm')
-				.classList.add('order-confirm--active');
+			if (this.getBasketAmount) {
+				this.clearBasketData();
+				document.querySelector('.basket').classList.remove('basket--active');
+				document
+					.querySelector('.order-confirm')
+					.classList.add('order-confirm--active');
+			}
 		},
 	},
 	watch: {
@@ -59,7 +61,7 @@ export default {
 			<span class="basket__empty-msg basket__empty-msg--big"> ¯\_(ツ)_/¯ </span>
 			<span class="basket__empty-msg">Your cart is empty</span>
 		</div>
-		<div class="basket__footer">
+		<div v-show="getBasketAmount" class="basket__footer">
 			<div class="basket__amount">
 				<span>Total:</span>
 				<span>${{ getBasketAmount }} USD</span>
