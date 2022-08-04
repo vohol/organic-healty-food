@@ -19,9 +19,10 @@ export default {
 			document.body.classList.add('nonscroll');
 		},
 		search(event) {
-			if (event.target.value.length >= 3) {
+			const request = event.target.value.trim();
+
+			if (request.length >= 3) {
 				this.isValid = true;
-				const request = event.target.value;
 
 				let regExp = new RegExp(`^${request}| ${request}`, 'gi');
 				this.searchResult = this.allProducts.filter((el) =>
